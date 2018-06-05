@@ -6,6 +6,7 @@ target 'TrekSuspension' do
   use_frameworks!
 
   # Pods for TrekSuspension
+  pod 'Alamofire', '~> 4.7'
 
   target 'TrekSuspensionTests' do
     inherit! :search_paths

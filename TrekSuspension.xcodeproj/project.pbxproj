@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8D880E6BF1FD4122FC05015B /* Pods_TrekSuspensionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC8EFFABC9B2082101B5E77E /* Pods_TrekSuspensionTests.framework */; };
+		8F7A21AD2EFEF173CBA2D173 /* Pods_TrekSuspension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99E945DDE1115145962CD992 /* Pods_TrekSuspension.framework */; };
 		9514B67020C706FD00178F5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9514B66F20C706FD00178F5B /* AppDelegate.swift */; };
 		9514B67220C706FD00178F5B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9514B67120C706FD00178F5B /* ViewController.swift */; };
 		9514B67520C706FD00178F5B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9514B67320C706FD00178F5B /* Main.storyboard */; };
@@ -26,6 +28,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0FC2058C01C14FD47855D087 /* Pods-TrekSuspension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrekSuspension.release.xcconfig"; path = "Pods/Target Support Files/Pods-TrekSuspension/Pods-TrekSuspension.release.xcconfig"; sourceTree = "<group>"; };
+		421DC71C6C3E4BEA9796F981 /* Pods-TrekSuspension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrekSuspension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TrekSuspension/Pods-TrekSuspension.debug.xcconfig"; sourceTree = "<group>"; };
+		86B6BB1EEF2A3BE7268606FF /* Pods-TrekSuspensionTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrekSuspensionTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TrekSuspensionTests/Pods-TrekSuspensionTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8FA23E4804FF8157DD2F3221 /* Pods-TrekSuspensionTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrekSuspensionTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TrekSuspensionTests/Pods-TrekSuspensionTests.release.xcconfig"; sourceTree = "<group>"; };
 		9514B66C20C706FD00178F5B /* TrekSuspension.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrekSuspension.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9514B66F20C706FD00178F5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9514B67120C706FD00178F5B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -36,6 +42,8 @@
 		9514B68020C706FE00178F5B /* TrekSuspensionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrekSuspensionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9514B68420C706FE00178F5B /* TrekSuspensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrekSuspensionTests.swift; sourceTree = "<group>"; };
 		9514B68620C706FE00178F5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		99E945DDE1115145962CD992 /* Pods_TrekSuspension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrekSuspension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC8EFFABC9B2082101B5E77E /* Pods_TrekSuspensionTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrekSuspensionTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F7A21AD2EFEF173CBA2D173 /* Pods_TrekSuspension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,18 +59,41 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D880E6BF1FD4122FC05015B /* Pods_TrekSuspensionTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04DFBD44D5405F296F28268C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				421DC71C6C3E4BEA9796F981 /* Pods-TrekSuspension.debug.xcconfig */,
+				0FC2058C01C14FD47855D087 /* Pods-TrekSuspension.release.xcconfig */,
+				86B6BB1EEF2A3BE7268606FF /* Pods-TrekSuspensionTests.debug.xcconfig */,
+				8FA23E4804FF8157DD2F3221 /* Pods-TrekSuspensionTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		598916873A1E7D2F700E0854 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				99E945DDE1115145962CD992 /* Pods_TrekSuspension.framework */,
+				EC8EFFABC9B2082101B5E77E /* Pods_TrekSuspensionTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9514B66320C706FD00178F5B = {
 			isa = PBXGroup;
 			children = (
 				9514B66E20C706FD00178F5B /* TrekSuspension */,
 				9514B68320C706FE00178F5B /* TrekSuspensionTests */,
 				9514B66D20C706FD00178F5B /* Products */,
+				04DFBD44D5405F296F28268C /* Pods */,
+				598916873A1E7D2F700E0854 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,9 +135,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9514B68920C706FE00178F5B /* Build configuration list for PBXNativeTarget "TrekSuspension" */;
 			buildPhases = (
+				88E045DF856F9B8E94DCA3EA /* [CP] Check Pods Manifest.lock */,
 				9514B66820C706FD00178F5B /* Sources */,
 				9514B66920C706FD00178F5B /* Frameworks */,
 				9514B66A20C706FD00178F5B /* Resources */,
+				22B0371D506AA6F38B25F780 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -120,6 +154,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9514B68C20C706FE00178F5B /* Build configuration list for PBXNativeTarget "TrekSuspensionTests" */;
 			buildPhases = (
+				D83DC2A7850BC4E9D03B7CA1 /* [CP] Check Pods Manifest.lock */,
 				9514B67C20C706FE00178F5B /* Sources */,
 				9514B67D20C706FE00178F5B /* Frameworks */,
 				9514B67E20C706FE00178F5B /* Resources */,
@@ -191,6 +226,63 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		22B0371D506AA6F38B25F780 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TrekSuspension/Pods-TrekSuspension-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TrekSuspension/Pods-TrekSuspension-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		88E045DF856F9B8E94DCA3EA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TrekSuspension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D83DC2A7850BC4E9D03B7CA1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TrekSuspensionTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9514B66820C706FD00178F5B /* Sources */ = {
@@ -356,6 +448,7 @@
 		};
 		9514B68A20C706FE00178F5B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 421DC71C6C3E4BEA9796F981 /* Pods-TrekSuspension.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -374,6 +467,7 @@
 		};
 		9514B68B20C706FE00178F5B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0FC2058C01C14FD47855D087 /* Pods-TrekSuspension.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -392,6 +486,7 @@
 		};
 		9514B68D20C706FE00178F5B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 86B6BB1EEF2A3BE7268606FF /* Pods-TrekSuspensionTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -413,6 +508,7 @@
 		};
 		9514B68E20C706FE00178F5B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8FA23E4804FF8157DD2F3221 /* Pods-TrekSuspensionTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

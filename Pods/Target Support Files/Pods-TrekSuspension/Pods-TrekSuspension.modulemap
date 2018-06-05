@@ -1,0 +1,6 @@
+framework module Pods_TrekSuspension {
+  umbrella header "Pods-TrekSuspension-umbrella.h"
+
+  export *
+  module * { export * }
+}
