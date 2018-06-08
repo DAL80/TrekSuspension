@@ -1,16 +1,24 @@
 PODS:
   - Alamofire (4.7.2)
+  - SwiftyUserDefaults (4.0.0-alpha.1)
+  - Toast-Swift (3.0.1)
 
 DEPENDENCIES:
   - Alamofire (~> 4.7)
+  - SwiftyUserDefaults (= 4.0.0-alpha.1)
+  - Toast-Swift (~> 3.0.1)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - SwiftyUserDefaults
+    - Toast-Swift
 
 SPEC CHECKSUMS:
   Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
+  SwiftyUserDefaults: cebe0ff9472f52699772a514b6f7155861d8069b
+  Toast-Swift: ba0b01b095aada709d915f9beb1d38184a2721c3
 
-PODFILE CHECKSUM: a285c78fbb00c43b5188ecf94df593d11a69e196
+PODFILE CHECKSUM: eaf56166c44ab6edb51eee1ff4f04d77afc4daa6
 
 COCOAPODS: 1.5.3

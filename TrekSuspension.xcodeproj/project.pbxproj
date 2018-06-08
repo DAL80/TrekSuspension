@@ -9,12 +9,23 @@
 /* Begin PBXBuildFile section */
 		8D880E6BF1FD4122FC05015B /* Pods_TrekSuspensionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC8EFFABC9B2082101B5E77E /* Pods_TrekSuspensionTests.framework */; };
 		8F7A21AD2EFEF173CBA2D173 /* Pods_TrekSuspension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99E945DDE1115145962CD992 /* Pods_TrekSuspension.framework */; };
+		9501069220CAA96200437CFE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 952110D520CA9C56000BB1DD /* Localizable.strings */; };
 		9514B67020C706FD00178F5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9514B66F20C706FD00178F5B /* AppDelegate.swift */; };
-		9514B67220C706FD00178F5B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9514B67120C706FD00178F5B /* ViewController.swift */; };
 		9514B67520C706FD00178F5B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9514B67320C706FD00178F5B /* Main.storyboard */; };
 		9514B67720C706FE00178F5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9514B67620C706FE00178F5B /* Assets.xcassets */; };
 		9514B67A20C706FE00178F5B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9514B67820C706FE00178F5B /* LaunchScreen.storyboard */; };
 		9514B68520C706FE00178F5B /* TrekSuspensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9514B68420C706FE00178F5B /* TrekSuspensionTests.swift */; };
+		952110D020C9D58C000BB1DD /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952110CF20C9D58C000BB1DD /* MainViewModel.swift */; };
+		952110D220CA91DE000BB1DD /* BikeYear.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952110D120CA91DE000BB1DD /* BikeYear.swift */; };
+		952110D920CA9D73000BB1DD /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952110D820CA9D73000BB1DD /* String+Ext.swift */; };
+		95247B4C20C9B17C00515B8C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95247B4B20C9B17C00515B8C /* SettingsViewController.swift */; };
+		9572F17D20C711A2009DE874 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9572F17C20C711A2009DE874 /* Constants.swift */; };
+		9572F17F20C717E8009DE874 /* Alamofire+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9572F17E20C717E8009DE874 /* Alamofire+Extension.swift */; };
+		9572F18220C7327A009DE874 /* BikeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9572F18120C7327A009DE874 /* BikeService.swift */; };
+		9572F18420C7349C009DE874 /* HTTPConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9572F18320C7349C009DE874 /* HTTPConfig.swift */; };
+		9572F18620C735F7009DE874 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9572F18520C735F7009DE874 /* API.swift */; };
+		9572F18820C739A5009DE874 /* API+BikeServiceData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9572F18720C739A5009DE874 /* API+BikeServiceData.swift */; };
+		95DA007420C8346400A39238 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DA007320C8346400A39238 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,14 +45,25 @@
 		8FA23E4804FF8157DD2F3221 /* Pods-TrekSuspensionTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrekSuspensionTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TrekSuspensionTests/Pods-TrekSuspensionTests.release.xcconfig"; sourceTree = "<group>"; };
 		9514B66C20C706FD00178F5B /* TrekSuspension.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrekSuspension.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9514B66F20C706FD00178F5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9514B67120C706FD00178F5B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9514B67420C706FD00178F5B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9514B67620C706FE00178F5B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9514B67920C706FE00178F5B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		9514B67B20C706FE00178F5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9514B68020C706FE00178F5B /* TrekSuspensionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrekSuspensionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9514B68420C706FE00178F5B /* TrekSuspensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrekSuspensionTests.swift; sourceTree = "<group>"; };
 		9514B68620C706FE00178F5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		952110CF20C9D58C000BB1DD /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		952110D120CA91DE000BB1DD /* BikeYear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeYear.swift; sourceTree = "<group>"; };
+		952110D520CA9C56000BB1DD /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		952110D820CA9D73000BB1DD /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
+		95247B4B20C9B17C00515B8C /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		9572F17C20C711A2009DE874 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		9572F17E20C717E8009DE874 /* Alamofire+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alamofire+Extension.swift"; sourceTree = "<group>"; };
+		9572F18120C7327A009DE874 /* BikeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeService.swift; sourceTree = "<group>"; };
+		9572F18320C7349C009DE874 /* HTTPConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPConfig.swift; sourceTree = "<group>"; };
+		9572F18520C735F7009DE874 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		9572F18720C739A5009DE874 /* API+BikeServiceData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API+BikeServiceData.swift"; sourceTree = "<group>"; };
+		95DA007320C8346400A39238 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		95EDE49620CAA5BE00AC1A67 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		99E945DDE1115145962CD992 /* Pods_TrekSuspension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrekSuspension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC8EFFABC9B2082101B5E77E /* Pods_TrekSuspensionTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrekSuspensionTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -109,12 +131,13 @@
 		9514B66E20C706FD00178F5B /* TrekSuspension */ = {
 			isa = PBXGroup;
 			children = (
-				9514B66F20C706FD00178F5B /* AppDelegate.swift */,
-				9514B67120C706FD00178F5B /* ViewController.swift */,
-				9514B67320C706FD00178F5B /* Main.storyboard */,
-				9514B67620C706FE00178F5B /* Assets.xcassets */,
-				9514B67820C706FE00178F5B /* LaunchScreen.storyboard */,
-				9514B67B20C706FE00178F5B /* Info.plist */,
+				9572F17A20C7114A009DE874 /* Network */,
+				9572F17B20C71152009DE874 /* Services */,
+				9572F17920C71124009DE874 /* Models */,
+				952110D720CA9D3D000BB1DD /* Extensions */,
+				9572F18920C81017009DE874 /* Support */,
+				95247B4920C9AF3700515B8C /* Main */,
+				95247B4A20C9AF6000515B8C /* Settings */,
 			);
 			path = TrekSuspension;
 			sourceTree = "<group>";
@@ -126,6 +149,72 @@
 				9514B68620C706FE00178F5B /* Info.plist */,
 			);
 			path = TrekSuspensionTests;
+			sourceTree = "<group>";
+		};
+		952110D720CA9D3D000BB1DD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				952110D820CA9D73000BB1DD /* String+Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		95247B4920C9AF3700515B8C /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				9514B67320C706FD00178F5B /* Main.storyboard */,
+				95DA007320C8346400A39238 /* MainViewController.swift */,
+				952110CF20C9D58C000BB1DD /* MainViewModel.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		95247B4A20C9AF6000515B8C /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				95247B4B20C9B17C00515B8C /* SettingsViewController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		9572F17920C71124009DE874 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				952110D120CA91DE000BB1DD /* BikeYear.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9572F17A20C7114A009DE874 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				9572F18520C735F7009DE874 /* API.swift */,
+				9572F18320C7349C009DE874 /* HTTPConfig.swift */,
+				9572F17E20C717E8009DE874 /* Alamofire+Extension.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		9572F17B20C71152009DE874 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				9572F18720C739A5009DE874 /* API+BikeServiceData.swift */,
+				9572F18120C7327A009DE874 /* BikeService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		9572F18920C81017009DE874 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				9514B67820C706FE00178F5B /* LaunchScreen.storyboard */,
+				9514B67620C706FE00178F5B /* Assets.xcassets */,
+				9572F17C20C711A2009DE874 /* Constants.swift */,
+				9514B66F20C706FD00178F5B /* AppDelegate.swift */,
+				95EDE49620CAA5BE00AC1A67 /* Info.plist */,
+				952110D520CA9C56000BB1DD /* Localizable.strings */,
+			);
+			path = Support;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,6 +229,7 @@
 				9514B66920C706FD00178F5B /* Frameworks */,
 				9514B66A20C706FD00178F5B /* Resources */,
 				22B0371D506AA6F38B25F780 /* [CP] Embed Pods Frameworks */,
+				9572F18020C71897009DE874 /* Flag TODO: and FIXME: comments Script */,
 			);
 			buildRules = (
 			);
@@ -213,6 +303,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9514B67A20C706FE00178F5B /* LaunchScreen.storyboard in Resources */,
+				9501069220CAA96200437CFE /* Localizable.strings in Resources */,
 				9514B67720C706FE00178F5B /* Assets.xcassets in Resources */,
 				9514B67520C706FD00178F5B /* Main.storyboard in Resources */,
 			);
@@ -236,10 +327,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-TrekSuspension/Pods-TrekSuspension-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyUserDefaults/SwiftyUserDefaults.framework",
+				"${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyUserDefaults.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast_Swift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -263,6 +358,20 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		9572F18020C71897009DE874 /* Flag TODO: and FIXME: comments Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Flag TODO: and FIXME: comments Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "TAGS=\"TODO:|FIXME:\"\necho \"searching ${SRCROOT} for ${TAGS}\"\nfind \"${SRCROOT}\" \\( -name \"*.swift\" \\) -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($TAGS).*\\$\" | perl -p -e \"s/($TAGS)/ warning: \\$1/\"";
 		};
 		D83DC2A7850BC4E9D03B7CA1 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -289,8 +398,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9514B67220C706FD00178F5B /* ViewController.swift in Sources */,
+				9572F17F20C717E8009DE874 /* Alamofire+Extension.swift in Sources */,
 				9514B67020C706FD00178F5B /* AppDelegate.swift in Sources */,
+				9572F18220C7327A009DE874 /* BikeService.swift in Sources */,
+				9572F17D20C711A2009DE874 /* Constants.swift in Sources */,
+				9572F18420C7349C009DE874 /* HTTPConfig.swift in Sources */,
+				952110D020C9D58C000BB1DD /* MainViewModel.swift in Sources */,
+				952110D920CA9D73000BB1DD /* String+Ext.swift in Sources */,
+				95DA007420C8346400A39238 /* MainViewController.swift in Sources */,
+				952110D220CA91DE000BB1DD /* BikeYear.swift in Sources */,
+				9572F18620C735F7009DE874 /* API.swift in Sources */,
+				9572F18820C739A5009DE874 /* API+BikeServiceData.swift in Sources */,
+				95247B4C20C9B17C00515B8C /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -453,7 +572,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = R5RDVG7JTX;
-				INFOPLIST_FILE = TrekSuspension/Info.plist;
+				INFOPLIST_FILE = TrekSuspension/Support/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -472,7 +591,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = R5RDVG7JTX;
-				INFOPLIST_FILE = TrekSuspension/Info.plist;
+				INFOPLIST_FILE = TrekSuspension/Support/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

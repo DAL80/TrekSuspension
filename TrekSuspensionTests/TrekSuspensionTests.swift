@@ -21,6 +21,19 @@ class TrekSuspensionTests: XCTestCase {
         super.tearDown()
     }
     
+//    func testRiderSettingsNotSaved() {
+//        //no userDefault values set
+//        
+//    }
+//    
+//    func testRiderSettingsSaved() {
+//        
+//    }
+//    
+//    
+//    
+//    
+    
     func testExample() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
