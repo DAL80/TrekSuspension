@@ -1,5 +1,5 @@
 //
-//  BikeYear.swift
+//  BikeYearModel.swift
 //  TrekSuspension
 //
 //  Created by Darren Larson on 6/8/18.
@@ -8,6 +8,6 @@
 
 import Foundation
 
-struct BikeYear {
-    public var year: [Int] = []
+struct BikeYearModel {
+    public var years: [Int] = []
 }

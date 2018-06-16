@@ -10,13 +10,16 @@
 		8D880E6BF1FD4122FC05015B /* Pods_TrekSuspensionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC8EFFABC9B2082101B5E77E /* Pods_TrekSuspensionTests.framework */; };
 		8F7A21AD2EFEF173CBA2D173 /* Pods_TrekSuspension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99E945DDE1115145962CD992 /* Pods_TrekSuspension.framework */; };
 		9501069220CAA96200437CFE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 952110D520CA9C56000BB1DD /* Localizable.strings */; };
+		951129BC20D539A30047DC36 /* BikeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951129BB20D539A30047DC36 /* BikeModel.swift */; };
+		951129BE20D53B780047DC36 /* BikeSettingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951129BD20D53B780047DC36 /* BikeSettingModel.swift */; };
+		951129C020D53CB50047DC36 /* SuspensionItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951129BF20D53CB50047DC36 /* SuspensionItemModel.swift */; };
 		9514B67020C706FD00178F5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9514B66F20C706FD00178F5B /* AppDelegate.swift */; };
 		9514B67520C706FD00178F5B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9514B67320C706FD00178F5B /* Main.storyboard */; };
 		9514B67720C706FE00178F5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9514B67620C706FE00178F5B /* Assets.xcassets */; };
 		9514B67A20C706FE00178F5B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9514B67820C706FE00178F5B /* LaunchScreen.storyboard */; };
 		9514B68520C706FE00178F5B /* TrekSuspensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9514B68420C706FE00178F5B /* TrekSuspensionTests.swift */; };
 		952110D020C9D58C000BB1DD /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952110CF20C9D58C000BB1DD /* MainViewModel.swift */; };
-		952110D220CA91DE000BB1DD /* BikeYear.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952110D120CA91DE000BB1DD /* BikeYear.swift */; };
+		952110D220CA91DE000BB1DD /* BikeYearModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952110D120CA91DE000BB1DD /* BikeYearModel.swift */; };
 		952110D920CA9D73000BB1DD /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952110D820CA9D73000BB1DD /* String+Ext.swift */; };
 		95247B4C20C9B17C00515B8C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95247B4B20C9B17C00515B8C /* SettingsViewController.swift */; };
 		9572F17D20C711A2009DE874 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9572F17C20C711A2009DE874 /* Constants.swift */; };
@@ -43,6 +46,9 @@
 		421DC71C6C3E4BEA9796F981 /* Pods-TrekSuspension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrekSuspension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TrekSuspension/Pods-TrekSuspension.debug.xcconfig"; sourceTree = "<group>"; };
 		86B6BB1EEF2A3BE7268606FF /* Pods-TrekSuspensionTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrekSuspensionTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TrekSuspensionTests/Pods-TrekSuspensionTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8FA23E4804FF8157DD2F3221 /* Pods-TrekSuspensionTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrekSuspensionTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TrekSuspensionTests/Pods-TrekSuspensionTests.release.xcconfig"; sourceTree = "<group>"; };
+		951129BB20D539A30047DC36 /* BikeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeModel.swift; sourceTree = "<group>"; };
+		951129BD20D53B780047DC36 /* BikeSettingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeSettingModel.swift; sourceTree = "<group>"; };
+		951129BF20D53CB50047DC36 /* SuspensionItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuspensionItemModel.swift; sourceTree = "<group>"; };
 		9514B66C20C706FD00178F5B /* TrekSuspension.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrekSuspension.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9514B66F20C706FD00178F5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9514B67420C706FD00178F5B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -52,7 +58,7 @@
 		9514B68420C706FE00178F5B /* TrekSuspensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrekSuspensionTests.swift; sourceTree = "<group>"; };
 		9514B68620C706FE00178F5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		952110CF20C9D58C000BB1DD /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
-		952110D120CA91DE000BB1DD /* BikeYear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeYear.swift; sourceTree = "<group>"; };
+		952110D120CA91DE000BB1DD /* BikeYearModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeYearModel.swift; sourceTree = "<group>"; };
 		952110D520CA9C56000BB1DD /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		952110D820CA9D73000BB1DD /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		95247B4B20C9B17C00515B8C /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -180,7 +186,10 @@
 		9572F17920C71124009DE874 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				952110D120CA91DE000BB1DD /* BikeYear.swift */,
+				952110D120CA91DE000BB1DD /* BikeYearModel.swift */,
+				951129BB20D539A30047DC36 /* BikeModel.swift */,
+				951129BD20D53B780047DC36 /* BikeSettingModel.swift */,
+				951129BF20D53CB50047DC36 /* SuspensionItemModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -400,13 +409,16 @@
 			files = (
 				9572F17F20C717E8009DE874 /* Alamofire+Extension.swift in Sources */,
 				9514B67020C706FD00178F5B /* AppDelegate.swift in Sources */,
+				951129C020D53CB50047DC36 /* SuspensionItemModel.swift in Sources */,
 				9572F18220C7327A009DE874 /* BikeService.swift in Sources */,
 				9572F17D20C711A2009DE874 /* Constants.swift in Sources */,
 				9572F18420C7349C009DE874 /* HTTPConfig.swift in Sources */,
+				951129BC20D539A30047DC36 /* BikeModel.swift in Sources */,
 				952110D020C9D58C000BB1DD /* MainViewModel.swift in Sources */,
+				951129BE20D53B780047DC36 /* BikeSettingModel.swift in Sources */,
 				952110D920CA9D73000BB1DD /* String+Ext.swift in Sources */,
 				95DA007420C8346400A39238 /* MainViewController.swift in Sources */,
-				952110D220CA91DE000BB1DD /* BikeYear.swift in Sources */,
+				952110D220CA91DE000BB1DD /* BikeYearModel.swift in Sources */,
 				9572F18620C735F7009DE874 /* API.swift in Sources */,
 				9572F18820C739A5009DE874 /* API+BikeServiceData.swift in Sources */,
 				95247B4C20C9B17C00515B8C /* SettingsViewController.swift in Sources */,
