@@ -13,4 +13,3 @@ extension String {
         return NSLocalizedString(self, tableName: tableName, value: "<\(self)>", comment: comment ?? "")
     }
 }
-

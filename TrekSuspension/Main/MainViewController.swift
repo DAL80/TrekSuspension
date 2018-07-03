@@ -12,12 +12,12 @@ class MainViewController: UIViewController {
     
     let mainViewModel = MainViewModel()
     
-    //MARK: Init Methods
+    // MARK: Init Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        if mainViewModel.hasSavedRiderSettings(){
+        if mainViewModel.hasSavedRiderSettings() {
             fetchSavedSettings()
             return
         }
@@ -31,8 +31,7 @@ class MainViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
-    //MARK: Settings Methods
+    // MARK: Settings Methods
     fileprivate func showRiderSettings() {
         //TODO: This will open rider settings screen to enter data
         

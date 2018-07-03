@@ -6,6 +6,6 @@
   Copyright © 2018 Darren Larson. All rights reserved.
 */
 
-//Mark: Warning Messages
+// MARK: Warning Messages
 "warning_unable_to_fetch_years" = "Unable to fetch available model years";
 "success" = "downloaded bike years";

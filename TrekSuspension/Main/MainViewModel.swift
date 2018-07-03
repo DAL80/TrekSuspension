@@ -11,7 +11,7 @@ import SwiftyUserDefaults
 
 class MainViewModel {
     
-    //MARK: Public Methods
+    // MARK: Public Methods
     func fetchAvailableModelYears(completion: @escaping ([Int]) -> Void) {
         let availableYears:[Int] = []
         

@@ -24,7 +24,7 @@ extension URLRequestConvertible {
         return try JSONEncoding.default.encode(request, with: parameters)
     }
     
-    func perform(completion: @escaping ((DataResponse<Any>)-> Void) ) {
+    func perform(completion: @escaping ((DataResponse<Any>) -> Void)) {
         Alamofire.request(self).validate().responseJSON { response in
             completion(response)
         }

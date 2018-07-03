@@ -21,4 +21,3 @@ extension DefaultsKeys {
     static let riderWeight = DefaultsKey<String?>("riderWeight")
     static let hasSavedSettings = DefaultsKey<Bool>("hasSavedSettings")
 }
-

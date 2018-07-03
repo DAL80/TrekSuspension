@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 struct BikeSettingModel {
     
     private enum CodingKeys: String, CodingKey {
@@ -22,6 +21,6 @@ struct BikeSettingModel {
     public var modelName: String = ""
     public var frontSuspension: String = ""
     public var rearSuspension: String = ""
-    public var frontSettings:[SuspensionItemModel] = SuspensionItemModel()
-    public var rearSettings:[SuspensionItemModel] = SuspensionItemModel()
+//    public var frontSettings:[SuspensionItemModel] = SuspensionItemModel()
+//    public var rearSettings:[SuspensionItemModel] = SuspensionItemModel()
 }

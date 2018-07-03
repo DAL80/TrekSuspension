@@ -17,7 +17,7 @@ public extension HTTPConfig {
         return Services.requestTimeoutInterval
     }
     
-    public var headers: [String: String]  {
+    public var headers: [String: String] {
         var headers: [String: String] = [:]
         headers["Content-Type"] = "application/json"
         

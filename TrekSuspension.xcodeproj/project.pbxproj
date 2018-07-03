@@ -239,6 +239,7 @@
 				9514B66A20C706FD00178F5B /* Resources */,
 				22B0371D506AA6F38B25F780 /* [CP] Embed Pods Frameworks */,
 				9572F18020C71897009DE874 /* Flag TODO: and FIXME: comments Script */,
+				9591F6D120EC319A00D4D48F /* SwiftLint Script */,
 			);
 			buildRules = (
 			);
@@ -381,6 +382,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "TAGS=\"TODO:|FIXME:\"\necho \"searching ${SRCROOT} for ${TAGS}\"\nfind \"${SRCROOT}\" \\( -name \"*.swift\" \\) -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($TAGS).*\\$\" | perl -p -e \"s/($TAGS)/ warning: \\$1/\"";
+		};
+		9591F6D120EC319A00D4D48F /* SwiftLint Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "SwiftLint Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
 		};
 		D83DC2A7850BC4E9D03B7CA1 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
