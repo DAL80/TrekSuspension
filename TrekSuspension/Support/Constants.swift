@@ -19,5 +19,6 @@ extension DefaultsKeys {
     static let bikeModelYear = DefaultsKey<String?>("bikeModelYear")
     static let bikeModel = DefaultsKey<String?>("bikeModel")
     static let riderWeight = DefaultsKey<String?>("riderWeight")
+    static let hasSavedSettings = DefaultsKey<Bool>("hasSavedSettings")
 }
 

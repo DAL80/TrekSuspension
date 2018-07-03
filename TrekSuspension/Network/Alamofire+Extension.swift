@@ -10,6 +10,7 @@ import Alamofire
 
 extension URLRequestConvertible {
     
+    //TODO: Need to update to let URL string be set if it doesn't match the default.
     func makeRequest(path: String, httpMethod: HTTPMethod, parameters: [String: Any]? = nil) throws -> URLRequest {
         
         var request = URLRequest(url: API.config.baseURL.appendingPathComponent(path))

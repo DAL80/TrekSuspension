@@ -17,8 +17,8 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        if hasSavedSettings() {
-            fetchBikeSettings()
+        if mainViewModel.hasSavedRiderSettings(){
+            fetchSavedSettings()
             return
         }
         
@@ -33,18 +33,12 @@ class MainViewController: UIViewController {
     
     
     //MARK: Settings Methods
-    fileprivate func hasSavedSettings() -> Bool {
-        //TODO: look up user defaults to determine if settings have been set previously
-        
-        return false
-    }
-    
     fileprivate func showRiderSettings() {
         //TODO: This will open rider settings screen to enter data
         
     }
     
-    fileprivate func fetchBikeSettings() {
+    fileprivate func fetchSavedSettings() {
         //TODO: This will fetch bike model details based on rider settings
         
     }

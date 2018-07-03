@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import SwiftyUserDefaults
 
 class MainViewModel {
     
@@ -25,5 +25,12 @@ class MainViewModel {
         }
     
         completion(availableYears)
+    }
+    
+    func hasSavedRiderSettings() -> Bool {
+        if Defaults[.hasSavedSettings] {
+            return true
+        }
+        return false
     }
 }

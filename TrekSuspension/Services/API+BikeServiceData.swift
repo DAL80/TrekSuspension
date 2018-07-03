@@ -17,9 +17,7 @@ extension API {
     }
 }
 
-
 extension API.BikeServiceData: URLRequestConvertible {
-    
     func asURLRequest() throws -> URLRequest {
         switch self {
         case .fetchYears:
