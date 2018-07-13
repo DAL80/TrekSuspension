@@ -17,8 +17,14 @@ struct SuspensionItemModel {
         case value
     }
     
-    public var relationTypeId: Int = 0
-    public var title: String = ""
-    public var units: String = ""
-    public var value: String = ""
+    fileprivate var relationTypeId: Int = 0
+    fileprivate var title: String = ""
+    fileprivate var units: String = ""
+    fileprivate var value: String = ""
+}
+
+extension SuspensionItemModel {
+    func getTitle() -> String { return title }
+    func getUnits() -> String { return units }
+    func getValue() -> String { return value }
 }

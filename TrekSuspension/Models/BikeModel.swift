@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Model {
+struct BikeModel {
     
     private enum CodingKeys: String, CodingKey {
         case id = "bikeModelId"
@@ -21,13 +21,34 @@ struct Model {
         case rearSuspension
     }
     
-    public var id: Int = 0
-    public var suspensionId: Int = 0
-    public var statusId: Int = 0
-    public var year: Int = 0
+    fileprivate var id: Int = 0
+    fileprivate var suspensionId: Int = 0
+    fileprivate var statusId: Int = 0
+    fileprivate var year: Int = 0
     fileprivate var identifier: String = ""
-    public var title: String = ""
-    public var frontSuspension: String = ""
-    public var rearSuspension: String = ""
-    public var url: String? = ""
+    fileprivate var title: String = ""
+    fileprivate var frontSuspension: String = ""
+    fileprivate var rearSuspension: String = ""
+    fileprivate var url: String? = ""
+}
+
+
+extension BikeModel {
+    func getId() -> Int { return id }
+    
+    func getSuspensionId() -> Int { return suspensionId }
+    
+    func getStatusId() -> Int { return statusId }
+    
+    func getYear() -> Int { return year }
+    
+    func getIdentifier() -> String { return identifier }
+    
+    func getTitle() -> String { return title }
+    
+    func getFrontSuspension() -> String { return frontSuspension }
+    
+    func getRearSuspension() -> String { return rearSuspension }
+    
+    func getUrl() -> String? { return url }
 }

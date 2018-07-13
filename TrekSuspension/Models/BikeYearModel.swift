@@ -9,5 +9,9 @@
 import Foundation
 
 struct BikeYearModel {
-    public var years: [Int] = []
+    fileprivate var years: [Int] = []
+}
+
+extension BikeYearModel {
+    func getYears() -> [Int] { return years }
 }

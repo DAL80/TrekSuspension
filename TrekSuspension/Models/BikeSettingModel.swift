@@ -18,9 +18,21 @@ struct BikeSettingModel {
         case rearSettings
     }
     
-    public var modelName: String = ""
-    public var frontSuspension: String = ""
-    public var rearSuspension: String = ""
-//    public var frontSettings:[SuspensionItemModel] = SuspensionItemModel()
-//    public var rearSettings:[SuspensionItemModel] = SuspensionItemModel()
+    fileprivate var modelName: String = ""
+    fileprivate var frontSuspension: String = ""
+    fileprivate var rearSuspension: String = ""
+    fileprivate var frontSettings:[SuspensionItemModel] =  [SuspensionItemModel]()
+    fileprivate var rearSettings:[SuspensionItemModel] = [SuspensionItemModel]()
+}
+
+extension BikeSettingModel {
+    func getModelName() -> String { return modelName }
+    
+    func getFrontSuspension() -> String { return frontSuspension }
+    
+    func getRearSuspension() -> String { return rearSuspension }
+    
+    func getFrontSettings() -> [SuspensionItemModel] { return frontSettings }
+    
+    func getRearSettings() -> [SuspensionItemModel] { return rearSettings }
 }
