@@ -21,11 +21,17 @@ class TrekSuspensionTests: XCTestCase {
         super.tearDown()
     }
     
-//    func testRiderSettingsNotSaved() {
-//        //no userDefault values set
-//        
-//    }
-//    
+    func testRiderSettingsNotSaved() {
+        //Given
+        let  mainViewModel = MainViewModel()
+        
+        //When
+        let hasSavedSettings = mainViewModel.hasSavedRiderSettings()
+        
+        //Then
+        XCTAssertFalse(hasSavedSettings)
+    }
+
 //    func testRiderSettingsSaved() {
 //        
 //    }
