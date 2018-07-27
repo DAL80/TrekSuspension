@@ -22,9 +22,9 @@ extension API.BikeServiceData: URLRequestConvertible {
         switch self {
         case .fetchYears:
             return try makeRequest(path: "suspension/years/", httpMethod: .get)
-        case let .fetchModelsForYear (year):
+        case let .fetchModelsForYear(year):
             return try makeRequest(path: "/suspension/models/\(year)", httpMethod: .get)
-        case let .fetchModelDetails (model):
+        case let .fetchModelDetails(model):
             return try makeRequest(path: "image/\(model)", httpMethod: .get)
         case let .fetchModelSettings(model, weightInLbs, year):
             return try makeRequest(path: "suspension/settings/\(model)/\(weightInLbs)/\(year)", httpMethod: .get)

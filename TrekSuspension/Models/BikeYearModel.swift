@@ -8,8 +8,12 @@
 
 import Foundation
 
-struct BikeYearModel {
+struct BikeYearModel: Codable {
     fileprivate var years: [Int] = []
+    
+    init(_ currentYears:[Int]) {
+        years = currentYears
+    }
 }
 
 extension BikeYearModel {

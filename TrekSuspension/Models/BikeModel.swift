@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct BikeModel {
+struct BikeModel: Codable {
     
     private enum CodingKeys: String, CodingKey {
         case id = "bikeModelId"
@@ -30,6 +30,7 @@ struct BikeModel {
     fileprivate var frontSuspension: String = ""
     fileprivate var rearSuspension: String = ""
     fileprivate var url: String? = ""
+    
 }
 
 

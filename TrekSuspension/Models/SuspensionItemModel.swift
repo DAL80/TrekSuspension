@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct SuspensionItemModel {
+struct SuspensionItemModel: Codable {
     
     private enum CodingKeys: String, CodingKey {
         case relationTypeId

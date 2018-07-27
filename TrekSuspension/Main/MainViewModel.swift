@@ -11,22 +11,6 @@ import SwiftyUserDefaults
 
 class MainViewModel {
     
-    // MARK: Public Methods
-    func fetchAvailableModelYears(completion: @escaping ([Int]) -> Void) {
-        let availableYears:[Int] = []
-        
-        BikeService().fetchYears { response in
-            switch response.result {
-            case .success:
-                print("success".localized())
-            case .failure:
-                print("warning_unable_to_fetch_years".localized())
-            }
-        }
-    
-        completion(availableYears)
-    }
-    
     func hasSavedRiderSettings() -> Bool {
         if Defaults[.hasSavedSettings] {
             return true

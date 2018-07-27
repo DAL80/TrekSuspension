@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct BikeSettingModel {
+struct BikeSettingModel: Codable {
     
     private enum CodingKeys: String, CodingKey {
         case name = "modelName"
@@ -18,7 +18,7 @@ struct BikeSettingModel {
         case rearSettings
     }
     
-    fileprivate var modelName: String = ""
+    fileprivate var name: String = ""
     fileprivate var frontSuspension: String = ""
     fileprivate var rearSuspension: String = ""
     fileprivate var frontSettings:[SuspensionItemModel] =  [SuspensionItemModel]()
@@ -26,7 +26,7 @@ struct BikeSettingModel {
 }
 
 extension BikeSettingModel {
-    func getModelName() -> String { return modelName }
+    func getModelName() -> String { return name }
     
     func getFrontSuspension() -> String { return frontSuspension }
     

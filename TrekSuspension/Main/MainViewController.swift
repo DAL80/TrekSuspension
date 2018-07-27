@@ -9,8 +9,8 @@
 import UIKit
 
 class MainViewController: UIViewController {
-    
-    let mainViewModel = MainViewModel()
+    // MARK: Properties
+    fileprivate let mainViewModel = MainViewModel()
     
     // MARK: Init Methods
     override func viewDidLoad() {

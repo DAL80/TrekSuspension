@@ -22,13 +22,13 @@ class TrekSuspensionTests: XCTestCase {
     }
     
     func testRiderSettingsNotSaved() {
-        //Given
+        //Arrange
         let  mainViewModel = MainViewModel()
         
-        //When
+        //Act
         let hasSavedSettings = mainViewModel.hasSavedRiderSettings()
         
-        //Then
+        //Assert
         XCTAssertFalse(hasSavedSettings)
     }
 
