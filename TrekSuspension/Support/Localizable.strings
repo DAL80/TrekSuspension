@@ -6,6 +6,9 @@
   Copyright © 2018 Darren Larson. All rights reserved.
 */
 
+// MARK: Rider Settings Messages
+"enter_rider_settings" = "Please enter and save rider settings.";
+
 // MARK: Warning Messages
 "warning_unable_to_fetch_years" = "Unable to fetch available model years";
 "success" = "downloaded bike years";

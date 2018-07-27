@@ -33,8 +33,8 @@ class MainViewController: UIViewController {
     
     // MARK: Settings Methods
     fileprivate func showRiderSettings() {
-        //TODO: This will open rider settings screen to enter data
-        
+        makeToast("enter_rider_settings".localized())
+        performSegue(withIdentifier: "RiderSettingsSegue", sender: nil)
     }
     
     fileprivate func fetchSavedSettings() {

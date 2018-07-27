@@ -1,5 +1,5 @@
 //
-//  SettingsViewController.swift
+//  RiderSettingsViewController.swift
 //  TrekSuspension
 //
 //  Created by Darren Larson on 6/7/18.
@@ -8,6 +8,6 @@
 
 import UIKit
 
-class SettingsViewController: UIViewController {
+class RiderSettingsViewController: UIViewController {
 
 }

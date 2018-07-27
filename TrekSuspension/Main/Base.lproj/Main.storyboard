@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Suspension Settings-->
+        <!--Bike Settings-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="TrekSuspension" customModuleProvider="target" sceneMemberID="viewController">
@@ -29,8 +29,13 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Suspension Settings" id="mUZ-9V-Yfz">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="edit" id="pjD-tu-NRd"/>
+                    <navigationItem key="navigationItem" title="Bike Settings" id="mUZ-9V-Yfz">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="2ZN-ka-ti9"/>
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="edit" id="pjD-tu-NRd">
+                            <connections>
+                                <segue destination="0bB-uP-eNw" kind="show" identifier="RiderSettingsSegue" id="PMS-gx-JKC"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -53,10 +58,10 @@
             </objects>
             <point key="canvasLocation" x="-12" y="159"/>
         </scene>
-        <!--Settings View Controller-->
+        <!--Rider Settings-->
         <scene sceneID="t90-fX-dsw">
             <objects>
-                <viewController id="0bB-uP-eNw" customClass="SettingsViewController" customModule="TrekSuspension" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Rider Settings" id="0bB-uP-eNw" customClass="RiderSettingsViewController" customModule="TrekSuspension" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="835-eH-BjP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -66,7 +71,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cya-Jh-h1L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="823" y="947"/>
+            <point key="canvasLocation" x="1785" y="159"/>
         </scene>
     </scenes>
 </document>

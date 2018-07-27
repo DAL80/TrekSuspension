@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		8D880E6BF1FD4122FC05015B /* Pods_TrekSuspensionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC8EFFABC9B2082101B5E77E /* Pods_TrekSuspensionTests.framework */; };
 		8F7A21AD2EFEF173CBA2D173 /* Pods_TrekSuspension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99E945DDE1115145962CD992 /* Pods_TrekSuspension.framework */; };
+		950027E3210B7C34002B9BC0 /* ViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950027E2210B7C34002B9BC0 /* ViewController+Ext.swift */; };
+		950027E5210B8040002B9BC0 /* Toast-Swift+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950027E4210B8040002B9BC0 /* Toast-Swift+Ext.swift */; };
 		9501069220CAA96200437CFE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 952110D520CA9C56000BB1DD /* Localizable.strings */; };
 		951129BC20D539A30047DC36 /* BikeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951129BB20D539A30047DC36 /* BikeModel.swift */; };
 		951129BE20D53B780047DC36 /* BikeSettingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951129BD20D53B780047DC36 /* BikeSettingModel.swift */; };
@@ -21,7 +23,7 @@
 		952110D020C9D58C000BB1DD /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952110CF20C9D58C000BB1DD /* MainViewModel.swift */; };
 		952110D220CA91DE000BB1DD /* BikeYearModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952110D120CA91DE000BB1DD /* BikeYearModel.swift */; };
 		952110D920CA9D73000BB1DD /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952110D820CA9D73000BB1DD /* String+Ext.swift */; };
-		95247B4C20C9B17C00515B8C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95247B4B20C9B17C00515B8C /* SettingsViewController.swift */; };
+		95247B4C20C9B17C00515B8C /* RiderSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95247B4B20C9B17C00515B8C /* RiderSettingsViewController.swift */; };
 		9572F17D20C711A2009DE874 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9572F17C20C711A2009DE874 /* Constants.swift */; };
 		9572F17F20C717E8009DE874 /* Alamofire+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9572F17E20C717E8009DE874 /* Alamofire+Extension.swift */; };
 		9572F18220C7327A009DE874 /* BikeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9572F18120C7327A009DE874 /* BikeService.swift */; };
@@ -46,6 +48,8 @@
 		421DC71C6C3E4BEA9796F981 /* Pods-TrekSuspension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrekSuspension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TrekSuspension/Pods-TrekSuspension.debug.xcconfig"; sourceTree = "<group>"; };
 		86B6BB1EEF2A3BE7268606FF /* Pods-TrekSuspensionTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrekSuspensionTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TrekSuspensionTests/Pods-TrekSuspensionTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8FA23E4804FF8157DD2F3221 /* Pods-TrekSuspensionTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrekSuspensionTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TrekSuspensionTests/Pods-TrekSuspensionTests.release.xcconfig"; sourceTree = "<group>"; };
+		950027E2210B7C34002B9BC0 /* ViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Ext.swift"; sourceTree = "<group>"; };
+		950027E4210B8040002B9BC0 /* Toast-Swift+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Toast-Swift+Ext.swift"; sourceTree = "<group>"; };
 		951129BB20D539A30047DC36 /* BikeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeModel.swift; sourceTree = "<group>"; };
 		951129BD20D53B780047DC36 /* BikeSettingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeSettingModel.swift; sourceTree = "<group>"; };
 		951129BF20D53CB50047DC36 /* SuspensionItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuspensionItemModel.swift; sourceTree = "<group>"; };
@@ -61,7 +65,7 @@
 		952110D120CA91DE000BB1DD /* BikeYearModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeYearModel.swift; sourceTree = "<group>"; };
 		952110D520CA9C56000BB1DD /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		952110D820CA9D73000BB1DD /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
-		95247B4B20C9B17C00515B8C /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		95247B4B20C9B17C00515B8C /* RiderSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiderSettingsViewController.swift; sourceTree = "<group>"; };
 		9572F17C20C711A2009DE874 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		9572F17E20C717E8009DE874 /* Alamofire+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alamofire+Extension.swift"; sourceTree = "<group>"; };
 		9572F18120C7327A009DE874 /* BikeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeService.swift; sourceTree = "<group>"; };
@@ -143,7 +147,7 @@
 				952110D720CA9D3D000BB1DD /* Extensions */,
 				9572F18920C81017009DE874 /* Support */,
 				95247B4920C9AF3700515B8C /* Main */,
-				95247B4A20C9AF6000515B8C /* Settings */,
+				95247B4A20C9AF6000515B8C /* RiderSettings */,
 			);
 			path = TrekSuspension;
 			sourceTree = "<group>";
@@ -161,6 +165,8 @@
 			isa = PBXGroup;
 			children = (
 				952110D820CA9D73000BB1DD /* String+Ext.swift */,
+				950027E2210B7C34002B9BC0 /* ViewController+Ext.swift */,
+				950027E4210B8040002B9BC0 /* Toast-Swift+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -175,12 +181,12 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
-		95247B4A20C9AF6000515B8C /* Settings */ = {
+		95247B4A20C9AF6000515B8C /* RiderSettings */ = {
 			isa = PBXGroup;
 			children = (
-				95247B4B20C9B17C00515B8C /* SettingsViewController.swift */,
+				95247B4B20C9B17C00515B8C /* RiderSettingsViewController.swift */,
 			);
-			path = Settings;
+			path = RiderSettings;
 			sourceTree = "<group>";
 		};
 		9572F17920C71124009DE874 /* Models */ = {
@@ -436,7 +442,9 @@
 				952110D220CA91DE000BB1DD /* BikeYearModel.swift in Sources */,
 				9572F18620C735F7009DE874 /* API.swift in Sources */,
 				9572F18820C739A5009DE874 /* API+BikeServiceData.swift in Sources */,
-				95247B4C20C9B17C00515B8C /* SettingsViewController.swift in Sources */,
+				950027E3210B7C34002B9BC0 /* ViewController+Ext.swift in Sources */,
+				95247B4C20C9B17C00515B8C /* RiderSettingsViewController.swift in Sources */,
+				950027E5210B8040002B9BC0 /* Toast-Swift+Ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
