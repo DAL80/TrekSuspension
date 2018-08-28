@@ -9,11 +9,11 @@
 import Alamofire
 
 extension URLRequestConvertible {
-    
-    //TODO: Need to update to let URL string be set if it doesn't match the default.
-    func makeRequest(path: String, httpMethod: HTTPMethod, parameters: [String: Any]? = nil) throws -> URLRequest {
+
+    //Sets up and returns URL Request
+    func makeRequest(baseUrl:URL = API.config.baseURL, path: String, httpMethod: HTTPMethod, parameters: [String: Any]? = nil) throws -> URLRequest {
         
-        var request = URLRequest(url: API.config.baseURL.appendingPathComponent(path))
+        var request = URLRequest(url: baseUrl.appendingPathComponent(path))
         request.httpMethod = httpMethod.rawValue
         request.cachePolicy = URLRequest.CachePolicy.reloadIgnoringCacheData
         
@@ -24,9 +24,16 @@ extension URLRequestConvertible {
         return try JSONEncoding.default.encode(request, with: parameters)
     }
     
+    //Runs the request and returns the results
     func perform(completion: @escaping ((DataResponse<Any>) -> Void)) {
         Alamofire.request(self).validate().responseJSON { response in
             completion(response)
         }
+    }
+    
+    func perform(completion: @escaping ((DataResponse<Data>) -> Void)) {
+        Alamofire.request(self).validate().responseData(completionHandler: { response in
+            completion(response)
+        })
     }
 }

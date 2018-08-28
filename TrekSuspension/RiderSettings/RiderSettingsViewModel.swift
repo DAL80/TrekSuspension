@@ -30,21 +30,24 @@ class RiderSettingsViewModel {
     }
     
     func fetchAvailableModelsForYear(_ year: Int, completion: @escaping ([BikeModel]) -> Void) {
-        let bikeModels:[BikeModel] = []
+        var bikeModels:[BikeModel] = []
         
         BikeService().fetchModelsForYear(year) { response in
-            switch response.result {
+            switch response.result { 
             case let .success(value):
-                guard let currentModels = value as? [BikeModel] else {
+                let decoder = JSONDecoder()
+                do {
+                    bikeModels = try decoder.decode([BikeModel].self, from: value)
                     completion(bikeModels)
-                    return
+                } catch {
+                    print("Error decoding JSON: \(error)")
+                    completion(bikeModels)
                 }
                 
-                completion(currentModels)
-            case .failure:
+            case let .failure(error):
+                //TODO: Alert that bike models could not be fetched
                 completion(bikeModels)
             }
-            
         }
     }
 }
