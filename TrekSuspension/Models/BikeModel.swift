@@ -27,12 +27,24 @@ struct BikeModel: Codable {
     fileprivate var year: Int = 0
     fileprivate var identifier: String = ""
     fileprivate var title: String = ""
-    fileprivate var frontSuspension: String = ""
-    fileprivate var rearSuspension: String = ""
-    fileprivate var url: String? = ""
+    fileprivate var frontSuspension: String?
+    fileprivate var rearSuspension: String?
+    fileprivate var url: String?
+    
+    init(id: Int, suspensionId: Int, statusId: Int, year: Int, identifier: String, title: String,
+         frontSuspension: String, rearSuspension: String, url: String? = nil) {
+        self.id = id
+        self.suspensionId = suspensionId
+        self.statusId = statusId
+        self.year = year
+        self.identifier = identifier
+        self.title = title
+        self.frontSuspension = frontSuspension
+        self.rearSuspension = rearSuspension
+        self.url = url
+    }
     
 }
-
 
 extension BikeModel {
     func getId() -> Int { return id }
@@ -47,9 +59,9 @@ extension BikeModel {
     
     func getTitle() -> String { return title }
     
-    func getFrontSuspension() -> String { return frontSuspension }
+    func getFrontSuspension() -> String { return frontSuspension ?? "N/A"}
     
-    func getRearSuspension() -> String { return rearSuspension }
+    func getRearSuspension() -> String { return rearSuspension  ?? "N/A"}
     
-    func getUrl() -> String? { return url }
+    func getUrl() -> String? { return url ?? "N/A" }
 }

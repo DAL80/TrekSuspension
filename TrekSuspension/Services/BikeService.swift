@@ -16,7 +16,7 @@ class BikeService {
         }
     }
     
-    func fetchModelsForYear(_ year: Int, completion: @escaping ((DataResponse<Any>)) -> Void) {
+    func fetchModelsForYear(_ year: Int, completion: @escaping ((DataResponse<Data>)) -> Void) {
         API.BikeServiceData.fetchModelsForYear(year: year).perform { response in
             completion(response)
         }
