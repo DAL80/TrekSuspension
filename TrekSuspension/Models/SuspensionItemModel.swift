@@ -17,10 +17,10 @@ struct SuspensionItemModel: Codable {
         case value
     }
     
-    fileprivate var relationTypeId: Int = 0
-    fileprivate var title: String = ""
-    fileprivate var units: String = ""
-    fileprivate var value: String = ""
+    private var relationTypeId: Int = 0
+    private var title: String = ""
+    private var units: String = ""
+    private var value: String = ""
 }
 
 extension SuspensionItemModel {

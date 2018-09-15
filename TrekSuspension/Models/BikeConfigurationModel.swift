@@ -1,5 +1,5 @@
 //
-//  BikeSettingModel.swift
+//  BikeConfigurationModel.swift
 //  TrekSuspension
 //
 //  Created by Darren Larson on 6/16/18.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct BikeSettingModel: Codable {
+struct BikeConfigurationModel: Codable {
     
     private enum CodingKeys: String, CodingKey {
         case name = "modelName"
@@ -18,14 +18,14 @@ struct BikeSettingModel: Codable {
         case rearSettings
     }
     
-    fileprivate var name: String = ""
-    fileprivate var frontSuspension: String = ""
-    fileprivate var rearSuspension: String = ""
-    fileprivate var frontSettings:[SuspensionItemModel] =  [SuspensionItemModel]()
-    fileprivate var rearSettings:[SuspensionItemModel] = [SuspensionItemModel]()
+    private var name: String = ""
+    private var frontSuspension: String = ""
+    private var rearSuspension: String = ""
+    private var frontSettings:[SuspensionItemModel] =  [SuspensionItemModel]()
+    private var rearSettings:[SuspensionItemModel] = [SuspensionItemModel]()
 }
 
-extension BikeSettingModel {
+extension BikeConfigurationModel {
     func getModelName() -> String { return name }
     
     func getFrontSuspension() -> String { return frontSuspension }

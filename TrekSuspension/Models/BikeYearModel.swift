@@ -9,11 +9,7 @@
 import Foundation
 
 struct BikeYearModel: Codable {
-    fileprivate var years: [Int] = []
-    
-    init(_ currentYears:[Int]) {
-        years = currentYears
-    }
+    private var years: [Int] = []
 }
 
 extension BikeYearModel {
