@@ -65,6 +65,13 @@ extension RiderSettingsViewController {
     }
 }
 
+// MARK: - IBAction Methods
+extension RiderSettingsViewController {
+    @IBAction func saveClicked(_ sender: Any) {
+        saveRiderSettings()
+    }
+}
+
 // MARK: - Actions Methods
 extension RiderSettingsViewController {
     private func selectDefaultBikeYear() {
@@ -77,29 +84,16 @@ extension RiderSettingsViewController {
     }
     
     private func saveRiderSettings() {
-        guard let riderWeight = riderWeight.text, !riderWeight.isEmpty else {
-            // TODO: Alert user that weight must be entered to save.
-            
+        guard let riderWeight = riderWeight.text, !riderWeight.isEmpty, let weight = Int(riderWeight), weight > 0 else {
+            makeToast("valid_rider_weight_required".localized())
             return
         }
         
-        
-        
-        let selectedBikeYear =  bikeModelYearPicker.selectedRow(inComponent: 0)
+        let selectedBikeYear = self.availableYears[bikeModelYearPicker.selectedRow(inComponent: 0)]
         let selectedBikeModel = self.availableBikeModels[bikeModelPicker.selectedRow(inComponent: 0)].getIdentifier()
-        guard let weight = Int(riderWeight) else {
-            // TODO: Alert that user weight could not be converted
-            
-            return
-        }
         
-        riderSettingsViewModel.saveRiderDefaults(year: selectedBikeYear, model: selectedBikeModel, weight: weight) { [unowned self] result in
-            // TODO: Save configuration info
-            
-            // TODO: Alert user that defaults were saved
-            
-            self.closeRiderSettings()
-        }
+        riderSettingsViewModel.saveRiderDefaults(year: selectedBikeYear, model: selectedBikeModel, weight: weight)
+        closeRiderSettings()
     }
     
     private func closeRiderSettings() {

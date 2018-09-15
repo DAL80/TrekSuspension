@@ -6,9 +6,12 @@
   Copyright © 2018 Darren Larson. All rights reserved.
 */
 
-// MARK: Rider Settings Messages
-"enter_rider_settings" = "Please enter and save rider settings.";
-
-// MARK: Warning Messages
-"warning_unable_to_fetch_years" = "Unable to fetch available model years";
+// Rider Settings API Warning Messages
+"warning_unable_to_fetch_years" = "Unable to fetch available years";
+"warning_unable_to_fetch_models_for_year" = "Unable to fetch available bike models for selected year";
 "warning_unable_to_fetch_configuration" = "Unable to fetch configuration for selected model";
+
+// Rider Settings Messages
+"enter_rider_settings" = "Enter rider settings to continue";
+"valid_rider_weight_required" = "Valid rider weight is required";
+"missing_rider_defaults" = "Missing rider details to fetch bike configuration";

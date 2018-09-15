@@ -228,9 +228,9 @@
 				9514B67820C706FE00178F5B /* LaunchScreen.storyboard */,
 				9514B67620C706FE00178F5B /* Assets.xcassets */,
 				9572F17C20C711A2009DE874 /* Constants.swift */,
+				952110D520CA9C56000BB1DD /* Localizable.strings */,
 				9514B66F20C706FD00178F5B /* AppDelegate.swift */,
 				95EDE49620CAA5BE00AC1A67 /* Info.plist */,
-				952110D520CA9C56000BB1DD /* Localizable.strings */,
 			);
 			path = Support;
 			sourceTree = "<group>";

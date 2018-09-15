@@ -110,9 +110,12 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b0j-zd-vsM">
-                                <rect key="frame" x="110" y="530" width="127" height="30"/>
+                                <rect key="frame" x="127" y="530" width="94" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Save and Calcuate"/>
+                                <state key="normal" title="Save Settings"/>
+                                <connections>
+                                    <action selector="saveClicked:" destination="0bB-uP-eNw" eventType="touchUpInside" id="0Vc-92-wzK"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

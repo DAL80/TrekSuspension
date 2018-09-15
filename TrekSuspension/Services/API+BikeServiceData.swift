@@ -13,7 +13,7 @@ extension API {
         case fetchYears
         case fetchModelsForYear(year: Int)
         case fetchModelImage(model: String)
-        case fetchModelConfiguration(year: Int, model:String, weightInLbs: Int)
+        case fetchModelConfiguration(year: Int, model: String, weightInLbs: Int)
     }
 }
 
