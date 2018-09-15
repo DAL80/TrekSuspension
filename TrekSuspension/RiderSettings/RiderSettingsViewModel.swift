@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwiftyUserDefaults
 
 class RiderSettingsViewModel {
     // MARK: Public Methods
@@ -47,6 +48,33 @@ class RiderSettingsViewModel {
             case let .failure(error):
                 //TODO: Alert that bike models could not be fetched
                 completion(bikeModels)
+            }
+        }
+    }
+    
+    func saveRiderDefaults(year: Int, model: String, weight: Int, completion: @escaping (BikeConfigurationModel) -> Void) {
+        // Set user defaults
+        Defaults[.bikeModelYear] = year
+        Defaults[.bikeModel] = model
+        Defaults[.riderWeight] = weight
+        Defaults[.hasSavedSettings] = true
+        
+        // Make request to get details for riders selected bike model
+        var bikeConfiguration = BikeConfigurationModel()
+        BikeService().fetchModelConfiguration(year: year, model: model, weightInLbs: weight) { response in
+            switch response.result {
+            case let .success(value):
+                let decoder = JSONDecoder()
+                do {
+                    bikeConfiguration = try decoder.decode(BikeConfigurationModel.self, from: value)
+                    completion(bikeConfiguration)
+                } catch {
+                    print("Error decoding JSON: \(error)")
+                    completion(bikeConfiguration)
+                }
+            case .failure:
+                print("warning_unable_to_fetch_configuration".localized())
+                completion(bikeConfiguration)
             }
         }
     }

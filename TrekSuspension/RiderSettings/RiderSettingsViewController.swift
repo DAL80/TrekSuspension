@@ -10,18 +10,18 @@ import UIKit
 
 class RiderSettingsViewController: UIViewController {
     
-    // MARK: IBOutlets
-    @IBOutlet weak var bikeModelYearPicker: UIPickerView!
-    @IBOutlet weak var bikeModelPicker: UIPickerView!
-    @IBOutlet weak var riderWeight: UITextField!
-    @IBOutlet weak var saveAndCalcuate: UIButton!
+    // MARK: - IBOutlets
+    @IBOutlet private var bikeModelYearPicker: UIPickerView!
+    @IBOutlet private var bikeModelPicker: UIPickerView!
+    @IBOutlet private var riderWeight: UITextField!
+    @IBOutlet private var saveAndCalcuate: UIButton!
     
-    // MARK: Properties
-    fileprivate let riderSettingsViewModel = RiderSettingsViewModel()
-    fileprivate var availableYears: [Int] = []
-    fileprivate var availableBikeModels: [BikeModel] = []
+    // MARK: - Properties
+    private let riderSettingsViewModel = RiderSettingsViewModel()
+    private var availableYears: [Int] = []
+    private var availableBikeModels: [BikeModel] = []
     
-    // MARK: Init Methods
+    // MARK: - Init Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,30 +34,81 @@ class RiderSettingsViewController: UIViewController {
         
     }
     
-    fileprivate func initialSetup() {
+    private func initialSetup() {
         bikeModelPicker.delegate = self
         bikeModelPicker.dataSource = self
         bikeModelYearPicker.delegate = self
         bikeModelYearPicker.dataSource = self
     }
-    
-    fileprivate func fetchBikeModelYears() {
-        riderSettingsViewModel.fetchAvailableModelYears { [unowned self] result in
+}
+
+// MARK: - Data Methods
+extension RiderSettingsViewController {
+    private func fetchBikeModelYears() {
+        riderSettingsViewModel.fetchAvailableModelYears { [weak self] result in
+            guard let `self` = self else { return }
+            
             self.availableYears = result
             self.bikeModelYearPicker.reloadAllComponents()
+            self.selectDefaultBikeYear()
         }
     }
     
-    fileprivate func fetchBikeModelsForSelectedYear(_ selectedYear: Int) {
-        riderSettingsViewModel.fetchAvailableModelsForYear(selectedYear) { [unowned self] result in
+    private func fetchBikeModelsForSelectedYear(_ selectedYear: Int) {
+        riderSettingsViewModel.fetchAvailableModelsForYear(selectedYear) { [weak self] result in
+            guard let `self` = self else { return }
+            
             self.availableBikeModels = result
             self.bikeModelPicker.reloadAllComponents()
+            self.selectDefaultBikeModel()
         }
     }
 }
 
-extension RiderSettingsViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+// MARK: - Actions Methods
+extension RiderSettingsViewController {
+    private func selectDefaultBikeYear() {
+        self.pickerView(self.bikeModelYearPicker, didSelectRow: 0, inComponent: 0)
+    }
     
+    private func selectDefaultBikeModel() {
+        self.bikeModelPicker.selectRow(0, inComponent: 0, animated: false)
+        self.pickerView(self.bikeModelPicker, didSelectRow: 0, inComponent: 0)
+    }
+    
+    private func saveRiderSettings() {
+        guard let riderWeight = riderWeight.text, !riderWeight.isEmpty else {
+            // TODO: Alert user that weight must be entered to save.
+            
+            return
+        }
+        
+        
+        
+        let selectedBikeYear =  bikeModelYearPicker.selectedRow(inComponent: 0)
+        let selectedBikeModel = self.availableBikeModels[bikeModelPicker.selectedRow(inComponent: 0)].getIdentifier()
+        guard let weight = Int(riderWeight) else {
+            // TODO: Alert that user weight could not be converted
+            
+            return
+        }
+        
+        riderSettingsViewModel.saveRiderDefaults(year: selectedBikeYear, model: selectedBikeModel, weight: weight) { [unowned self] result in
+            // TODO: Save configuration info
+            
+            // TODO: Alert user that defaults were saved
+            
+            self.closeRiderSettings()
+        }
+    }
+    
+    private func closeRiderSettings() {
+        self.dismiss(animated: true, completion: nil)
+    }
+}
+
+// MARK: - PickerView Delegate Methods
+extension RiderSettingsViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -85,6 +136,11 @@ extension RiderSettingsViewController: UIPickerViewDelegate, UIPickerViewDataSou
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        fetchBikeModelsForSelectedYear(availableYears[row])
+        switch pickerView.tag {
+        case 0:
+            fetchBikeModelsForSelectedYear(availableYears[row])
+        default:
+            return
+        }
     }
 }
