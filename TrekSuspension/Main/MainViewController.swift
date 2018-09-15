@@ -9,10 +9,10 @@
 import UIKit
 
 class MainViewController: UIViewController {
-    // MARK: Properties
+    // MARK: - Properties
     fileprivate let mainViewModel = MainViewModel()
     
-    // MARK: Init Methods
+    // MARK: - Init Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -32,12 +32,12 @@ class MainViewController: UIViewController {
     }
     
     // MARK: Settings Methods
-    fileprivate func showRiderSettings() {
+    private func showRiderSettings() {
         makeToast("enter_rider_settings".localized())
         performSegue(withIdentifier: "RiderSettingsSegue", sender: nil)
     }
     
-    fileprivate func fetchSavedSettings() {
+    private func fetchSavedSettings() {
         //TODO: This will fetch bike model details based on rider settings
         
     }

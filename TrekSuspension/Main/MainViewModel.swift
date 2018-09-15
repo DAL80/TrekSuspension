@@ -12,9 +12,6 @@ import SwiftyUserDefaults
 class MainViewModel {
     
     func hasSavedRiderSettings() -> Bool {
-        if Defaults[.hasSavedSettings] {
-            return true
-        }
-        return false
+        return Defaults[.hasSavedSettings]
     }
 }
