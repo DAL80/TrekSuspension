@@ -22,4 +22,9 @@ class BikeService {
         }
     }
 
+    func fetchModelConfiguration(year: Int, model:String, weightInLbs: Int, completion: @escaping ((DataResponse<Data>)) -> Void) {
+        API.BikeServiceData.fetchModelConfiguration(year: year, model: model, weightInLbs: weightInLbs).perform { response in
+            completion(response)
+        }
+    }
 }

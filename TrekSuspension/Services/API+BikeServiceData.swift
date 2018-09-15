@@ -12,8 +12,8 @@ extension API {
     enum BikeServiceData {
         case fetchYears
         case fetchModelsForYear(year: Int)
-        case fetchModelDetails(model: String)
-        case fetchModelSettings (model:String, weightInLbs: Int, year: Int)
+        case fetchModelImage(model: String)
+        case fetchModelConfiguration(year: Int, model:String, weightInLbs: Int)
     }
 }
 
@@ -24,9 +24,9 @@ extension API.BikeServiceData: URLRequestConvertible {
             return try makeRequest(path: "suspension/years/", httpMethod: .get)
         case let .fetchModelsForYear(year):
             return try makeRequest(path: "suspension/models/\(year)", httpMethod: .get)
-        case let .fetchModelDetails(model):
+        case let .fetchModelImage(model):
             return try makeRequest(path: "image/\(model)", httpMethod: .get)
-        case let .fetchModelSettings(model, weightInLbs, year):
+        case let .fetchModelConfiguration(year, model, weightInLbs):
             return try makeRequest(path: "suspension/settings/\(model)/\(weightInLbs)/\(year)", httpMethod: .get)
         }
     }
