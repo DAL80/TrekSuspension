@@ -11,4 +11,4 @@
 
 // MARK: Warning Messages
 "warning_unable_to_fetch_years" = "Unable to fetch available model years";
-"success" = "downloaded bike years";
+"warning_unable_to_fetch_configuration" = "Unable to fetch configuration for selected model";
