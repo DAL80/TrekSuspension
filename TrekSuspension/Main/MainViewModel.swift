@@ -15,7 +15,7 @@ class MainViewModel {
         return Defaults[.hasSavedSettings]
     }
     
-    func fetchRidersBikeConfiguration(completion: @escaping (BikeConfigurationModel) -> Void) {
+    func fetchRidersBikeConfiguration(completion: @escaping (BikeConfigurationModel?) -> Void) {
         guard
             let year = Defaults[.bikeModelYear],
             let model = Defaults[.bikeModel],
@@ -25,7 +25,7 @@ class MainViewModel {
         }
         
         // Make request to get details for riders selected bike model
-        var bikeConfiguration = BikeConfigurationModel()
+        var bikeConfiguration: BikeConfigurationModel?
         BikeService().fetchModelConfiguration(year: year, model: model, weightInLbs: riderWeight) { response in
             switch response.result {
             case let .success(value):

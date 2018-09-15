@@ -6,6 +6,11 @@
   Copyright © 2018 Darren Larson. All rights reserved.
 */
 
+// Main VC Messages
+"no_configuration_data" = "No cofiguration data available";
+
+
+
 // Rider Settings API Warning Messages
 "warning_unable_to_fetch_years" = "Unable to fetch available years";
 "warning_unable_to_fetch_models_for_year" = "Unable to fetch available bike models for selected year";

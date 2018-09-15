@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyUserDefaults
 
 class RiderSettingsViewController: UIViewController {
     
@@ -39,6 +40,10 @@ class RiderSettingsViewController: UIViewController {
         bikeModelPicker.dataSource = self
         bikeModelYearPicker.delegate = self
         bikeModelYearPicker.dataSource = self
+        
+        if let savedWeight = Defaults[.riderWeight] {
+            riderWeight.text = "\(savedWeight)"
+        }
     }
 }
 
@@ -75,12 +80,28 @@ extension RiderSettingsViewController {
 // MARK: - Actions Methods
 extension RiderSettingsViewController {
     private func selectDefaultBikeYear() {
-        self.pickerView(self.bikeModelYearPicker, didSelectRow: 0, inComponent: 0)
+        var rowToSelect = 0
+        if let savedYear = Defaults[.bikeModelYear] {
+            rowToSelect = availableYears.index(of: savedYear) ?? 0
+        }
+        
+        self.bikeModelYearPicker.selectRow(rowToSelect, inComponent: 0, animated: false)
+        self.pickerView(self.bikeModelYearPicker, didSelectRow: rowToSelect, inComponent: 0)
     }
     
     private func selectDefaultBikeModel() {
-        self.bikeModelPicker.selectRow(0, inComponent: 0, animated: false)
-        self.pickerView(self.bikeModelPicker, didSelectRow: 0, inComponent: 0)
+        var rowToSelect = 0
+        if let savedModel = Defaults[.bikeModel] {
+          
+            let _ = availableBikeModels.enumerated().compactMap { index, bike in
+                if bike.getIdentifier().lowercased() == savedModel.lowercased() {
+                    rowToSelect = index
+                }
+            }
+        }
+        
+        self.bikeModelPicker.selectRow(rowToSelect, inComponent: 0, animated: false)
+        self.pickerView(self.bikeModelPicker, didSelectRow: rowToSelect, inComponent: 0)
     }
     
     private func saveRiderSettings() {

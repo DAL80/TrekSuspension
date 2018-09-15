@@ -9,9 +9,12 @@
 import UIKit
 
 class MainViewController: UIViewController {
+    //MARK: - IBOutlets
+    @IBOutlet var bikeModelName: UILabel!
+    
     // MARK: - Properties
     private let mainViewModel = MainViewModel()
-    private var riderBikeConfig = BikeConfigurationModel()
+    private var riderBikeConfig: BikeConfigurationModel?
     
     // MARK: - Init Methods
     override func viewDidLoad() {
@@ -29,6 +32,7 @@ class MainViewController: UIViewController {
         
         if mainViewModel.hasSavedRiderSettings() {
             fetchSavedSettings()
+            fetchBikeImage()
             return
         }
     }
@@ -48,10 +52,22 @@ class MainViewController: UIViewController {
     private func fetchSavedSettings() {
         mainViewModel.fetchRidersBikeConfiguration { [weak self] result in
             guard let `self` = self else { return }
-            
+        
             self.riderBikeConfig = result
-            
-            print("Saved configuration: \(self.riderBikeConfig)")
+            self.updateDataDisplayed()
         }
+    }
+    
+    private func updateDataDisplayed() {
+        guard let currentBikeConfig = riderBikeConfig else {
+            makeToast("no_configuration_data".localized())
+            return
+        }
+        
+        bikeModelName.text = currentBikeConfig.getModelName()
+    }
+    
+    private func fetchBikeImage() {
+        
     }
 }
