@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import SwiftyUserDefaults
 
 class MainViewController: UIViewController {
     //MARK: - IBOutlets
-    @IBOutlet var bikeModelName: UILabel!
+    @IBOutlet weak var bikeModelName: UILabel!
+    @IBOutlet weak var bikeImage: UIImageView!
     
     // MARK: - Properties
     private let mainViewModel = MainViewModel()
@@ -68,6 +70,25 @@ class MainViewController: UIViewController {
     }
     
     private func fetchBikeImage() {
+        guard
+            let modelName = Defaults[.bikeModel] else { return }
         
+        mainViewModel.fetchBikeModelImage(modelName) { [weak self] result in
+            guard
+                let `self` = self else { return }
+            guard
+                let bikeModelImage = result else { return }
+            
+            self.fetchImage(bikeModelImage.getUrl())
+        }
+    }
+    
+    private func fetchImage(_ url:String) {
+        mainViewModel.fetchImage(url) { [weak self] result in
+            guard
+                let `self` = self else { return }
+            
+            self.bikeImage.image = result
+        }
     }
 }

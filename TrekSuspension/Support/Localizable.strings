@@ -15,6 +15,8 @@
 "warning_unable_to_fetch_years" = "Unable to fetch available years";
 "warning_unable_to_fetch_models_for_year" = "Unable to fetch available bike models for selected year";
 "warning_unable_to_fetch_configuration" = "Unable to fetch configuration for selected model";
+"warning_unable_to_fetch_model_image" = "Unable to fetch image detail for selected model";
+"warning_unable_to_fetch_image" = "Unable to fetch image for url";
 
 // Rider Settings Messages
 "enter_rider_settings" = "Enter rider settings to continue";

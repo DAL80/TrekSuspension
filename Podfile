@@ -7,6 +7,7 @@ target 'TrekSuspension' do
 
   # Pods for TrekSuspension
   pod 'Alamofire', '~> 4.7'
+  pod 'AlamofireImage'
   pod 'SwiftyUserDefaults', '4.0.0-alpha.1'
   pod 'Toast-Swift', '~> 3.0.1'
   pod 'SwiftLint'

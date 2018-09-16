@@ -7,6 +7,7 @@
 //
 
 import Alamofire
+import AlamofireImage
 
 class BikeService {
     
@@ -24,6 +25,23 @@ class BikeService {
 
     func fetchModelConfiguration(year: Int, model:String, weightInLbs: Int, completion: @escaping ((DataResponse<Data>)) -> Void) {
         API.BikeServiceData.fetchModelConfiguration(year: year, model: model, weightInLbs: weightInLbs).perform { response in
+            completion(response)
+        }
+    }
+    
+    func fetchModelImage(model: String, completion: @escaping ((DataResponse<Data>)) -> Void) {
+        API.BikeServiceData.fetchModelImage(model: model).perform { response in
+            completion(response)
+        }
+    }
+    
+    func fetchImage(_ url: String, completion: @escaping ((DataResponse<Image>)) -> Void) {
+        var tmpUrl = url
+        if url.prefix(4).lowercased() != "http:" {
+            tmpUrl = "http:\(url)"
+        }
+
+        Alamofire.request(tmpUrl).responseImage { response in
             completion(response)
         }
     }

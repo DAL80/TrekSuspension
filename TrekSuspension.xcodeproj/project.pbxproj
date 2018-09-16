@@ -31,6 +31,7 @@
 		9572F18420C7349C009DE874 /* HTTPConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9572F18320C7349C009DE874 /* HTTPConfig.swift */; };
 		9572F18620C735F7009DE874 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9572F18520C735F7009DE874 /* API.swift */; };
 		9572F18820C739A5009DE874 /* API+BikeServiceData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9572F18720C739A5009DE874 /* API+BikeServiceData.swift */; };
+		95888756214E79CC00653122 /* BikeModelImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95888755214E79CC00653122 /* BikeModelImage.swift */; };
 		95DA007420C8346400A39238 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DA007320C8346400A39238 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +75,7 @@
 		9572F18320C7349C009DE874 /* HTTPConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPConfig.swift; sourceTree = "<group>"; };
 		9572F18520C735F7009DE874 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		9572F18720C739A5009DE874 /* API+BikeServiceData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API+BikeServiceData.swift"; sourceTree = "<group>"; };
+		95888755214E79CC00653122 /* BikeModelImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeModelImage.swift; sourceTree = "<group>"; };
 		95DA007320C8346400A39238 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		95EDE49620CAA5BE00AC1A67 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		99E945DDE1115145962CD992 /* Pods_TrekSuspension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrekSuspension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -199,6 +201,7 @@
 				951129BB20D539A30047DC36 /* BikeModel.swift */,
 				951129BD20D53B780047DC36 /* BikeConfigurationModel.swift */,
 				951129BF20D53CB50047DC36 /* SuspensionItemModel.swift */,
+				95888755214E79CC00653122 /* BikeModelImage.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -346,12 +349,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-TrekSuspension/Pods-TrekSuspension-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyUserDefaults/SwiftyUserDefaults.framework",
 				"${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyUserDefaults.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast_Swift.framework",
 			);
@@ -434,6 +439,7 @@
 				9572F17F20C717E8009DE874 /* Alamofire+Extension.swift in Sources */,
 				9514B67020C706FD00178F5B /* AppDelegate.swift in Sources */,
 				951129C020D53CB50047DC36 /* SuspensionItemModel.swift in Sources */,
+				95888756214E79CC00653122 /* BikeModelImage.swift in Sources */,
 				9572F18220C7327A009DE874 /* BikeService.swift in Sources */,
 				9572F17D20C711A2009DE874 /* Constants.swift in Sources */,
 				9572F18420C7349C009DE874 /* HTTPConfig.swift in Sources */,

@@ -1,11 +1,14 @@
 PODS:
   - Alamofire (4.7.2)
+  - AlamofireImage (3.3.1):
+    - Alamofire (~> 4.5)
   - SwiftLint (0.25.1)
   - SwiftyUserDefaults (4.0.0-alpha.1)
   - Toast-Swift (3.0.1)
 
 DEPENDENCIES:
   - Alamofire (~> 4.7)
+  - AlamofireImage
   - SwiftLint
   - SwiftyUserDefaults (= 4.0.0-alpha.1)
   - Toast-Swift (~> 3.0.1)
@@ -13,16 +16,18 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - AlamofireImage
     - SwiftLint
     - SwiftyUserDefaults
     - Toast-Swift
 
 SPEC CHECKSUMS:
   Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
+  AlamofireImage: 3b35b586853abaf94ca1250f4e94cff3c21a4c0d
   SwiftLint: ce933681be10c3266e82576dad676fa815a602e9
   SwiftyUserDefaults: cebe0ff9472f52699772a514b6f7155861d8069b
   Toast-Swift: ba0b01b095aada709d915f9beb1d38184a2721c3
 
-PODFILE CHECKSUM: 4562ac402a78638dbf8584da60dd189417b56e84
+PODFILE CHECKSUM: 96ce8c1133ec0473b6454c9adbeed93961ecbeb2
 
 COCOAPODS: 1.5.3
