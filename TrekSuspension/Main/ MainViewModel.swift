@@ -28,14 +28,9 @@ class MainViewModel {
         BikeService().fetchModelConfiguration(year: year, model: model, weightInLbs: riderWeight) { response in
             switch response.result {
             case let .success(value):
-                let decoder = JSONDecoder()
-                do {
-                    bikeConfiguration = try decoder.decode(BikeConfigurationModel.self, from: value)
-                    completion(bikeConfiguration)
-                } catch {
-                    print("Error decoding JSON: \(error)")
-                    completion(bikeConfiguration)
-                }
+                API.parseResponse(type: BikeConfigurationModel.self, responseValue: value, completion: { item in
+                    completion(item)
+                })
             case .failure:
                 print("warning_unable_to_fetch_configuration".localized())
                 completion(bikeConfiguration)

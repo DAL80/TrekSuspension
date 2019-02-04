@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Alamofire
 
 public struct API {
     // MARK: - Properties
@@ -19,5 +20,23 @@ public struct API {
         }
 
         request.timeoutInterval = API.config.requestTimeoutInterval
+    }
+}
+
+
+extension API {
+    static public func parseResponse<T: Decodable>(type: T.Type,
+                                        responseValue: Data,
+                                        decoder: JSONDecoder = JSONDecoder(),
+                                        completion: @escaping (T?) -> Void) {
+
+        var itempParseItem: T?
+        do {
+            itempParseItem = try decoder.decode(type, from: responseValue)
+            completion(itempParseItem)
+        } catch {
+            print("Error decoding JSON: \(error)")
+            completion(itempParseItem)
+        }
     }
 }
