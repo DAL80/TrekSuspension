@@ -13,6 +13,12 @@ class MainViewController: UIViewController {
     //MARK: - IBOutlets
     @IBOutlet weak var bikeModelName: UILabel!
     @IBOutlet weak var bikeImage: UIImageView!
+    @IBOutlet weak var suspensionType: UISegmentedControl!
+    @IBOutlet weak var suspensionTitle: UILabel!
+    @IBOutlet weak var spring: UILabel!
+    @IBOutlet weak var rebound: UILabel!
+    @IBOutlet weak var shockStroke: UILabel!
+    @IBOutlet weak var shockSag: UILabel!
     
     // MARK: - Properties
     private let mainViewModel = MainViewModel()
@@ -22,6 +28,8 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        suspensionType.addTarget(self, action: #selector(suspensionChanged), for: .valueChanged)
         
         if !mainViewModel.hasSavedRiderSettings() {
             //no user settings detected
@@ -43,7 +51,11 @@ class MainViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+}
+
+// Custom Methods
+extension MainViewController {
+
     // MARK: - Settings Methods
     private func showRiderSettings() {
         makeToast("enter_rider_settings".localized())
@@ -67,6 +79,37 @@ class MainViewController: UIViewController {
         }
         
         bikeModelName.text = currentBikeConfig.getModelName()
+        var suspensionName = ""
+        var suspensionSettings = [SuspensionItemModel]()
+        switch suspensionType.selectedSegmentIndex {
+        case 0:
+            suspensionName = currentBikeConfig.getFrontSuspension()
+            suspensionSettings = currentBikeConfig.getFrontSettings()
+        case 1:
+            suspensionName = currentBikeConfig.getRearSuspension()
+            suspensionSettings = currentBikeConfig.getRearSettings()
+        default:
+            return
+        }
+        
+        suspensionTitle.text = suspensionName
+        for item in suspensionSettings {
+            
+            let tmpItemValue = "\(item.getValue()) \(item.getUnits())"
+            
+            switch item.getTitle().lowercased() {
+            case "spring":
+                spring.text = tmpItemValue
+            case "rebound":
+                rebound.text = tmpItemValue
+            case "fork sag", "shock sag":
+                shockSag.text = tmpItemValue
+            case "shock stroke":
+                shockStroke.text = tmpItemValue
+            default:
+                return
+            }
+        }
     }
     
     private func fetchBikeImage() {
@@ -90,5 +133,18 @@ class MainViewController: UIViewController {
             
             self.bikeImage.image = result
         }
+    }
+    
+    @objc private func suspensionChanged() {
+        clearSuspensionValues()
+        updateDataDisplayed()
+    }
+    
+    private func clearSuspensionValues() {
+        suspensionTitle.text = "not_available".localized()
+        spring.text = "not_available".localized()
+        rebound.text = "not_available".localized()
+        shockSag.text = "not_available".localized()
+        shockStroke.text = "not_available".localized()
     }
 }

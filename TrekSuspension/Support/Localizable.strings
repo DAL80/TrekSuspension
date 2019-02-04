@@ -22,3 +22,6 @@
 "enter_rider_settings" = "Enter rider settings to continue";
 "valid_rider_weight_required" = "Valid rider weight is required";
 "missing_rider_defaults" = "Missing rider details to fetch bike configuration";
+
+// Settings
+"not_available" = "N/A";

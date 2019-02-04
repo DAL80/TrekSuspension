@@ -65,7 +65,6 @@ class MainViewModel {
     }
     
     func fetchImage(_ url:String, completion: @escaping (UIImage?) -> Void) {
-        
         BikeService().fetchImage(url) { response in
             switch response.result {
             case let .success(value):

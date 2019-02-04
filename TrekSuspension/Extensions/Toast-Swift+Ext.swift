@@ -34,13 +34,7 @@ public enum ToastDisplay: CGFloat {
 
 public extension UIView {
     
-    public func makeToastMsg(_ message: String?,
-                             duration: TimeInterval = ToastManager.shared.duration,
-                             position: ToastDisplay = ToastDisplay.default,
-                             title: String? = nil,
-                             image: UIImage? = nil,
-                             style: ToastStyle = ToastManager.shared.style,
-                             completion: ((_ didTap: Bool) -> Void)? = nil) {
+    public func makeToastMsg(_ message: String?, duration: TimeInterval = ToastManager.shared.duration, position: ToastDisplay = ToastDisplay.default, title: String? = nil, image: UIImage? = nil, style: ToastStyle = ToastManager.shared.style, completion: ((_ didTap: Bool) -> Void)? = nil) {
         do {
             let toast = try toastViewForMessage(message, title: title, image: image, style: style)
             showToast(toast, duration: duration, position: position, completion: completion)
