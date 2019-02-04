@@ -21,14 +21,11 @@ public struct API {
 
         request.timeoutInterval = API.config.requestTimeoutInterval
     }
-}
 
-
-extension API {
     static public func parseResponse<T: Decodable>(type: T.Type,
-                                        responseValue: Data,
-                                        decoder: JSONDecoder = JSONDecoder(),
-                                        completion: @escaping (T?) -> Void) {
+                                                   responseValue: Data,
+                                                   decoder: JSONDecoder = JSONDecoder(),
+                                                   completion: @escaping (T?) -> Void) {
 
         var itempParseItem: T?
         do {

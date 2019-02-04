@@ -31,19 +31,9 @@ class RiderSettingsViewModel {
     }
 
     func fetchAvailableModelsForYear(_ year: Int, completion: @escaping ([BikeModel]) -> Void) {
-        //var bikeModels: [BikeModel] = []
-
         BikeService().fetchModelsForYear(year) { response in
             switch response.result {
             case let .success(value):
-//                let decoder = JSONDecoder()
-//                do {
-//                    bikeModels = try decoder.decode([BikeModel].self, from: value)
-//                    completion(bikeModels)
-//                } catch {
-//                    print("Error decoding JSON: \(error)")
-//                    completion(bikeModels)
-//                }
                 API.parseResponse(type: [BikeModel].self, responseValue: value, completion: { item in
                     completion(item ?? [])
                 })
