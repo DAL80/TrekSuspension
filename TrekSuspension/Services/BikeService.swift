@@ -35,10 +35,7 @@ class BikeService {
     }
 
     func fetchImage(_ url: String, completion: @escaping ((DataResponse<Image>)) -> Void) {
-        var tmpUrl = url
-        if url.prefix(4).lowercased() != "http:" {
-            tmpUrl = "http:\(url)"
-        }
+        let tmpUrl = url.prefix(4).lowercased() == "http:" ? url : "http:\(url)"
 
         Alamofire.request(tmpUrl).responseImage { response in
             completion(response)

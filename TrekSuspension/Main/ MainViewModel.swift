@@ -24,7 +24,6 @@ class MainViewModel {
                 return
         }
 
-        var bikeConfiguration: BikeConfigurationModel?
         BikeService().fetchModelConfiguration(year: year, model: model, weightInLbs: riderWeight) { response in
             switch response.result {
             case let .success(value):
@@ -33,28 +32,21 @@ class MainViewModel {
                 })
             case .failure:
                 print("warning_unable_to_fetch_configuration".localized())
-                completion(bikeConfiguration)
+                completion(nil)
             }
         }
     }
 
     func fetchBikeModelImage(_ model: String, completion: @escaping (BikeModelImage?) -> Void) {
-        var bikeImage: BikeModelImage?
-
         BikeService().fetchModelImage(model: model) { response in
             switch response.result {
             case let .success(value):
-                let decoder = JSONDecoder()
-                do {
-                    bikeImage = try decoder.decode(BikeModelImage.self, from: value)
-                    completion(bikeImage)
-                } catch {
-                    print("Error decoding JSON: \(error)")
-                    completion(bikeImage)
-                }
+                API.parseResponse(type: BikeModelImage.self, responseValue: value, completion: { item in
+                    completion(item)
+                })
             case .failure:
                 print("warning_unable_to_fetch_model_image".localized())
-                completion(bikeImage)
+                completion(nil)
             }
         }
     }
