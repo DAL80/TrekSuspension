@@ -1,9 +1,9 @@
 disabled_rules: # rule identifiers to exclude from running
-  - colon
-  - comma
-  - control_statement
-  - trailing_whitespace
-  - statement_position
+  #- colon
+  #- comma
+  #- control_statement
+  #- trailing_whitespace
+  #- statement_position
 
 opt_in_rules: # some rules are only opt-in
 #  - empty_count
@@ -45,7 +45,9 @@ identifier_name:
   excluded: # excluded via string array
     - id
     - URL
-line_length: 300
+line_length:
+  warning: 140 #warning
+  error: 140 #error
 function_body_length: 75
 cyclomatic_complexity:
   warning: 15

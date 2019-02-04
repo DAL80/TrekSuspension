@@ -9,14 +9,13 @@
 import Foundation
 
 struct SuspensionItemModel: Codable {
-    
     private enum CodingKeys: String, CodingKey {
         case relationTypeId
         case title = "settingTypeTitle"
         case units
         case value
     }
-    
+
     private var relationTypeId: Int = 0
     private var title: String = ""
     private var units: String = ""

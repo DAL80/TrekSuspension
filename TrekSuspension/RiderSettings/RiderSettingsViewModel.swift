@@ -12,8 +12,8 @@ import SwiftyUserDefaults
 class RiderSettingsViewModel {
     // MARK: - Public Methods
     func fetchAvailableModelYears(completion: @escaping ([Int]) -> Void) {
-        let availableYears:[Int] = []
-        
+        let availableYears: [Int] = []
+
         BikeService().fetchYears { response in
             switch response.result {
             case let .success(value):
@@ -21,7 +21,7 @@ class RiderSettingsViewModel {
                     completion(availableYears)
                     return
                 }
-                
+
                 completion(currentYears)
             case .failure:
                 print("warning_unable_to_fetch_years".localized())
@@ -29,12 +29,12 @@ class RiderSettingsViewModel {
             }
         }
     }
-    
+
     func fetchAvailableModelsForYear(_ year: Int, completion: @escaping ([BikeModel]) -> Void) {
-        var bikeModels:[BikeModel] = []
-        
+        var bikeModels: [BikeModel] = []
+
         BikeService().fetchModelsForYear(year) { response in
-            switch response.result { 
+            switch response.result {
             case let .success(value):
                 let decoder = JSONDecoder()
                 do {
@@ -44,14 +44,14 @@ class RiderSettingsViewModel {
                     print("Error decoding JSON: \(error)")
                     completion(bikeModels)
                 }
-                
-            case let .failure(error):
+
+            case .failure(_):
                 print("warning_unable_to_fetch_years".localized())
                 completion(bikeModels)
             }
         }
     }
-    
+
     func saveRiderDefaults(year: Int, model: String, weight: Int) {
         Defaults[.bikeModelYear] = year
         Defaults[.bikeModel] = model

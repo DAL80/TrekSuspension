@@ -115,6 +115,7 @@
                     <connections>
                         <outlet property="bikeImage" destination="k9y-Uc-8A7" id="k2x-3y-UB4"/>
                         <outlet property="bikeModelName" destination="lpA-7S-NoM" id="bkF-1N-c00"/>
+                        <outlet property="forkShockLabel" destination="2IW-aP-16q" id="HCD-MD-a2T"/>
                         <outlet property="rebound" destination="Rgi-YF-8H6" id="Ylq-BJ-FPb"/>
                         <outlet property="shockSag" destination="xhw-Vn-MCP" id="i9c-tL-ohh"/>
                         <outlet property="shockStroke" destination="zMN-Th-hft" id="EPh-Rm-jKD"/>

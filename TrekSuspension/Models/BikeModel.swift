@@ -9,7 +9,6 @@
 import Foundation
 
 struct BikeModel: Codable {
-    
     private enum CodingKeys: String, CodingKey {
         case id = "bikeModelId"
         case suspensionId
@@ -20,7 +19,7 @@ struct BikeModel: Codable {
         case frontSuspension
         case rearSuspension
     }
-    
+
     private var id: Int = 0
     private var suspensionId: Int = 0
     private var statusId: Int = 0
@@ -33,22 +32,13 @@ struct BikeModel: Codable {
 }
 
 extension BikeModel {
-    
     func getId() -> Int { return id }
-    
     func getSuspensionId() -> Int { return suspensionId }
-    
     func getStatusId() -> Int { return statusId }
-    
     func getYear() -> Int { return year }
-    
     func getIdentifier() -> String { return identifier }
-    
     func getTitle() -> String { return title }
-    
     func getFrontSuspension() -> String { return frontSuspension ?? "N/A"}
-    
     func getRearSuspension() -> String { return rearSuspension  ?? "N/A"}
-    
     func getUrl() -> String? { return url ?? "N/A" }
 }

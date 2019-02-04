@@ -9,7 +9,7 @@
 import Foundation
 
 extension String {
-    func localized(tableName:String? = nil, withComment comment: String? = nil) -> String {
+    func localized(tableName: String? = nil, withComment comment: String? = nil) -> String {
         return NSLocalizedString(self, tableName: tableName, value: "<\(self)>", comment: comment ?? "")
     }
 }

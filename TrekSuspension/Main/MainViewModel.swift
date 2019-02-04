@@ -14,7 +14,7 @@ class MainViewModel {
     func hasSavedRiderSettings() -> Bool {
         return Defaults[.hasSavedSettings]
     }
-    
+
     func fetchRidersBikeConfiguration(completion: @escaping (BikeConfigurationModel?) -> Void) {
         guard
             let year = Defaults[.bikeModelYear],
@@ -23,7 +23,7 @@ class MainViewModel {
                 print("missing_rider_defaults".localized())
                 return
         }
-        
+
         var bikeConfiguration: BikeConfigurationModel?
         BikeService().fetchModelConfiguration(year: year, model: model, weightInLbs: riderWeight) { response in
             switch response.result {
@@ -42,10 +42,10 @@ class MainViewModel {
             }
         }
     }
-    
+
     func fetchBikeModelImage(_ model: String, completion: @escaping (BikeModelImage?) -> Void) {
         var bikeImage: BikeModelImage?
-        
+
         BikeService().fetchModelImage(model: model) { response in
             switch response.result {
             case let .success(value):
@@ -63,8 +63,8 @@ class MainViewModel {
             }
         }
     }
-    
-    func fetchImage(_ url:String, completion: @escaping (UIImage?) -> Void) {
+
+    func fetchImage(_ url: String, completion: @escaping (UIImage?) -> Void) {
         BikeService().fetchImage(url) { response in
             switch response.result {
             case let .success(value):

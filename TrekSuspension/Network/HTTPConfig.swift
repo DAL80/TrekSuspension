@@ -16,20 +16,18 @@ public extension HTTPConfig {
     public var requestTimeoutInterval: TimeInterval {
         return Services.requestTimeoutInterval
     }
-    
+
     public var headers: [String: String] {
         var headers: [String: String] = [:]
         headers["Content-Type"] = "application/json"
-        
+
         return headers
     }
 }
 
 public struct SettingsHTTPConfig: HTTPConfig {
     public private(set) var baseURL: URL!
-    
     public init() {
         self.baseURL = URL(string: Services.baseURL)
     }
-    
 }
