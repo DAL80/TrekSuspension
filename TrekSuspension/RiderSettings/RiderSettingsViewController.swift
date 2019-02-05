@@ -20,6 +20,7 @@ class RiderSettingsViewController: UIViewController {
     private let riderSettingsViewModel = RiderSettingsViewModel()
     private var availableYears: [Int] = []
     private var availableBikeModels: [BikeModel] = []
+    private var isProcessing = false
 
     // MARK: - Init Methods
     override func viewDidLoad() {
@@ -102,15 +103,19 @@ extension RiderSettingsViewController {
     }
 
     private func saveRiderSettings() {
+        if isProcessing { return }
         guard let riderWeight = riderWeight.text, !riderWeight.isEmpty, let weight = Int(riderWeight), weight > 0 else {
             makeToast("valid_rider_weight_required".localized())
             return
         }
 
+        isProcessing = true
+
         let selectedBikeYear = self.availableYears[bikeModelYearPicker.selectedRow(inComponent: 0)]
         let selectedBikeModel = self.availableBikeModels[bikeModelPicker.selectedRow(inComponent: 0)].getIdentifier()
 
         riderSettingsViewModel.saveRiderDefaults(year: selectedBikeYear, model: selectedBikeModel, weight: weight)
+        isProcessing = false
         closeRiderSettings()
     }
 

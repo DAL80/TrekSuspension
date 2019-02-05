@@ -24,16 +24,15 @@ class MainViewController: UIViewController {
     // MARK: - Properties
     private let mainViewModel = MainViewModel()
     private var riderBikeConfig: BikeConfigurationModel?
+    private var isProcessing = false
 
     // MARK: - Init Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
 
         suspensionType.addTarget(self, action: #selector(suspensionChanged), for: .valueChanged)
 
         if !mainViewModel.hasSavedRiderSettings() {
-            //no user settings detected
             showRiderSettings()
         }
     }
@@ -42,6 +41,7 @@ class MainViewController: UIViewController {
         super.viewWillAppear(animated)
 
         if mainViewModel.hasSavedRiderSettings() {
+            clearSuspensionValues()
             fetchSavedSettings()
             fetchBikeImage()
             return
@@ -57,8 +57,12 @@ class MainViewController: UIViewController {
 extension MainViewController {
     // MARK: - Settings Methods
     private func showRiderSettings() {
+        if isProcesing { return }
+
+        isProcessing = true
         makeToast("enter_rider_settings".localized())
         performSegue(withIdentifier: "RiderSettingsSegue", sender: nil)
+        isProcessing = false
     }
 
     // MARK: - Data Methods
