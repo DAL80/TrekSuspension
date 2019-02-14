@@ -11,16 +11,31 @@ import SwiftyUserDefaults
 
 class RiderSettingsViewController: UIViewController {
     // MARK: - IBOutlets
-    @IBOutlet private var bikeModelYearPicker: UIPickerView!
-    @IBOutlet private var bikeModelPicker: UIPickerView!
+    @IBOutlet private var bikeModelYear: UITextField!
+    @IBOutlet private var bikeModel: UITextField!
     @IBOutlet private var riderWeight: UITextField!
     @IBOutlet private var saveAndCalcuate: UIButton!
 
     // MARK: - Properties
+    private var bikeModelYearPicker = UIPickerView.init()
+    private var bikeModelPicker = UIPickerView.init()
     private let riderSettingsViewModel = RiderSettingsViewModel()
     private var availableYears: [Int] = []
     private var availableBikeModels: [BikeModel] = []
     private var isProcessing = false
+
+    lazy private var toolbar: UIToolbar = {
+        let toolbar = UIToolbar()
+        toolbar.barStyle = .default
+        toolbar.sizeToFit()
+
+        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(self.doneClick))
+        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        toolbar.setItems([flexibleSpace, doneButton], animated: false)
+        toolbar.isUserInteractionEnabled = true
+
+        return toolbar
+    }()
 
     // MARK: - Init Methods
     override func viewDidLoad() {
@@ -37,8 +52,17 @@ class RiderSettingsViewController: UIViewController {
     private func initialSetup() {
         bikeModelPicker.delegate = self
         bikeModelPicker.dataSource = self
+        bikeModelPicker.tag = 1
+
         bikeModelYearPicker.delegate = self
         bikeModelYearPicker.dataSource = self
+        bikeModelYearPicker.tag = 0
+
+        bikeModelYear.inputView = bikeModelYearPicker
+        bikeModelYear.inputAccessoryView = toolbar
+
+        bikeModel.inputView = bikeModelPicker
+        bikeModel.inputAccessoryView = toolbar
 
         if let savedWeight = Defaults[.riderWeight] {
             riderWeight.text = "\(savedWeight)"
@@ -76,16 +100,40 @@ extension RiderSettingsViewController {
     }
 }
 
+// MARK: - Private Methods
+extension RiderSettingsViewController {
+    private func updateBikeModelYear(_ year: String) {
+        bikeModelYear.text = year
+    }
+
+    private func updateBikeModel(_ model: String) {
+        bikeModel.text = model
+    }
+
+    @objc private func doneClick() {
+        bikeModelYear.resignFirstResponder()
+        bikeModel.resignFirstResponder()
+    }
+}
+
 // MARK: - Actions Methods
 extension RiderSettingsViewController {
     private func selectDefaultBikeYear() {
         var rowToSelect = 0
+        var bikeYear = availableYears.first
+
         if let savedYear = Defaults[.bikeModelYear] {
+            bikeYear = savedYear
             rowToSelect = availableYears.index(of: savedYear) ?? 0
+        }
+
+        if let displayBikeYearText = bikeYear {
+            updateBikeModelYear(String(displayBikeYearText))
         }
 
         self.bikeModelYearPicker.selectRow(rowToSelect, inComponent: 0, animated: false)
         self.pickerView(self.bikeModelYearPicker, didSelectRow: rowToSelect, inComponent: 0)
+
     }
 
     private func selectDefaultBikeModel() {
@@ -94,6 +142,7 @@ extension RiderSettingsViewController {
             _ = availableBikeModels.enumerated().compactMap { index, bike in
                 if bike.getIdentifier().lowercased() == savedModel.lowercased() {
                     rowToSelect = index
+                    updateBikeModel(bike.getTitle())
                 }
             }
         }
@@ -156,6 +205,9 @@ extension RiderSettingsViewController: UIPickerViewDelegate, UIPickerViewDataSou
         switch pickerView.tag {
         case 0:
             fetchBikeModelsForSelectedYear(availableYears[row])
+            updateBikeModelYear(String(availableYears[row]))
+        case 1:
+            updateBikeModel(String(availableBikeModels[row].getTitle()))
         default:
             return
         }
