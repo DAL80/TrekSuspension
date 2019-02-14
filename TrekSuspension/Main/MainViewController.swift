@@ -57,7 +57,7 @@ class MainViewController: UIViewController {
 extension MainViewController {
     // MARK: - Settings Methods
     private func showRiderSettings() {
-        if isProcesing { return }
+        if isProcessing { return }
 
         isProcessing = true
         makeToast("enter_rider_settings".localized())
