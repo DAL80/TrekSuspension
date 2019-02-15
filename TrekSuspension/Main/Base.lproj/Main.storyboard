@@ -105,7 +105,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Bike Settings" id="mUZ-9V-Yfz">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="2ZN-ka-ti9"/>
+                        <barButtonItem key="backBarButtonItem" title=" " id="2ZN-ka-ti9"/>
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="edit" id="pjD-tu-NRd">
                             <connections>
                                 <segue destination="0bB-uP-eNw" kind="show" identifier="RiderSettingsSegue" id="PMS-gx-JKC"/>
@@ -192,7 +192,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Save Settings"/>
                                 <connections>
-                                    <action selector="saveClicked:" destination="0bB-uP-eNw" eventType="touchUpInside" id="0Vc-92-wzK"/>
+                                    <action selector="saveClick:" destination="0bB-uP-eNw" eventType="touchUpInside" id="pDg-6i-hsN"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EKl-A9-cKE">
@@ -213,9 +213,17 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="fut-OY-hmj"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Rider Settings" id="Xlj-Ub-b2t">
+                        <barButtonItem key="leftBarButtonItem" title="Done" id="IWV-It-oGx">
+                            <connections>
+                                <action selector="doneClick:" destination="0bB-uP-eNw" id="Kgk-FT-Qkt"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="bikeModel" destination="lQx-wP-fS3" id="MCS-no-BrL"/>
                         <outlet property="bikeModelYear" destination="EKl-A9-cKE" id="PA0-SW-EeA"/>
+                        <outlet property="doneButton" destination="IWV-It-oGx" id="wjs-iZ-E2k"/>
                         <outlet property="riderWeight" destination="ohn-qj-rr6" id="bsH-Z3-apL"/>
                         <outlet property="saveAndCalcuate" destination="b0j-zd-vsM" id="cub-CQ-5xh"/>
                     </connections>

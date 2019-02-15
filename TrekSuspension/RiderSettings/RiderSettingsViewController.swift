@@ -15,6 +15,7 @@ class RiderSettingsViewController: UIViewController {
     @IBOutlet private var bikeModel: UITextField!
     @IBOutlet private var riderWeight: UITextField!
     @IBOutlet private var saveAndCalcuate: UIButton!
+    @IBOutlet weak var doneButton: UIBarButtonItem!
 
     // MARK: - Properties
     private var bikeModelYearPicker = UIPickerView.init()
@@ -23,15 +24,17 @@ class RiderSettingsViewController: UIViewController {
     private var availableYears: [Int] = []
     private var availableBikeModels: [BikeModel] = []
     private var isProcessing = false
+    private var isDefaultSetting = false
+    private var hasUnsavedChanges = false
 
     lazy private var toolbar: UIToolbar = {
         let toolbar = UIToolbar()
         toolbar.barStyle = .default
         toolbar.sizeToFit()
 
-        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(self.doneClick))
+        let selectButton = UIBarButtonItem(title: "Select", style: .plain, target: self, action: #selector(self.selectClick))
         let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        toolbar.setItems([flexibleSpace, doneButton], animated: false)
+        toolbar.setItems([flexibleSpace, selectButton], animated: false)
         toolbar.isUserInteractionEnabled = true
 
         return toolbar
@@ -95,8 +98,16 @@ extension RiderSettingsViewController {
 
 // MARK: - IBAction Methods
 extension RiderSettingsViewController {
-    @IBAction func saveClicked(_ sender: Any) {
+    @IBAction func saveClick(_ sender: Any) {
         saveRiderSettings()
+    }
+
+    @IBAction func doneClick(_ sender: Any) {
+        if hasUnsavedChanges {
+            unSavedChangesAlert()
+        } else {
+            closeRiderSettings()
+        }
     }
 }
 
@@ -110,9 +121,21 @@ extension RiderSettingsViewController {
         bikeModel.text = model
     }
 
-    @objc private func doneClick() {
+    @objc private func selectClick() {
         bikeModelYear.resignFirstResponder()
         bikeModel.resignFirstResponder()
+    }
+
+    private func unSavedChangesAlert() {
+        let alert = UIAlertController(title: "Unsaved Changes", message: "Continue without saving changes?", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { _ in
+            self.bikeModelYear.resignFirstResponder()
+            self.bikeModel.resignFirstResponder()
+            self.closeRiderSettings()
+        }))
+        alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+
+        self.present(alert, animated: true)
     }
 }
 
@@ -125,6 +148,7 @@ extension RiderSettingsViewController {
         if let savedYear = Defaults[.bikeModelYear] {
             bikeYear = savedYear
             rowToSelect = availableYears.index(of: savedYear) ?? 0
+            isDefaultSetting = true
         }
 
         if let displayBikeYearText = bikeYear {
@@ -143,6 +167,7 @@ extension RiderSettingsViewController {
                 if bike.getIdentifier().lowercased() == savedModel.lowercased() {
                     rowToSelect = index
                     updateBikeModel(bike.getTitle())
+                    isDefaultSetting = true
                 }
             }
         }
@@ -169,7 +194,8 @@ extension RiderSettingsViewController {
     }
 
     private func closeRiderSettings() {
-        self.dismiss(animated: true, completion: nil)
+        //self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }
 }
 
@@ -202,6 +228,12 @@ extension RiderSettingsViewController: UIPickerViewDelegate, UIPickerViewDataSou
     }
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if !isDefaultSetting {
+            hasUnsavedChanges = true
+        }
+
+        isDefaultSetting = false
+
         switch pickerView.tag {
         case 0:
             fetchBikeModelsForSelectedYear(availableYears[row])
