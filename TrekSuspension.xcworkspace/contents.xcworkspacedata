@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:TrekSuspension/Main/Base.lproj/RiderSettings.storyboard">
+   </FileRef>
+   <FileRef
       location = "group:TrekSuspension.xcodeproj">
    </FileRef>
    <FileRef
