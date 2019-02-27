@@ -13,7 +13,7 @@ public struct API {
     // MARK: - Properties
     public static var config: HTTPConfig = SettingsHTTPConfig()
 
-    // MARK: - Methods
+    // MARK: - Public Methods
     public static func configure(_ request: inout URLRequest) {
         for (key, value) in API.config.headers {
             request.setValue(value, forHTTPHeaderField: key)
@@ -22,7 +22,7 @@ public struct API {
         request.timeoutInterval = API.config.requestTimeoutInterval
     }
 
-    static public func parseResponse<T: Decodable>(type: T.Type,
+    public static func parseResponse<T: Decodable>(type: T.Type,
                                                    responseValue: Data,
                                                    decoder: JSONDecoder = JSONDecoder(),
                                                    completion: @escaping (T?) -> Void) {
