@@ -71,10 +71,8 @@ class RiderSettingsViewController: UIViewController {
             riderWeight.text = "\(savedWeight)"
         }
     }
-}
 
-// MARK: - Data Methods
-extension RiderSettingsViewController {
+    // MARK: - Private Methods
     private func fetchBikeModelYears() {
         riderSettingsViewModel.fetchAvailableModelYears { [weak self] result in
             guard let `self` = self else { return }
@@ -94,25 +92,7 @@ extension RiderSettingsViewController {
             self.selectDefaultBikeModel()
         }
     }
-}
 
-// MARK: - IBAction Methods
-extension RiderSettingsViewController {
-    @IBAction func saveClick(_ sender: Any) {
-        saveRiderSettings()
-    }
-
-    @IBAction func doneClick(_ sender: Any) {
-        if hasUnsavedChanges {
-            unSavedChangesAlert()
-        } else {
-            closeRiderSettings()
-        }
-    }
-}
-
-// MARK: - Private Methods
-extension RiderSettingsViewController {
     private func updateBikeModelYear(_ year: String) {
         bikeModelYear.text = year
     }
@@ -137,10 +117,7 @@ extension RiderSettingsViewController {
 
         self.present(alert, animated: true)
     }
-}
 
-// MARK: - Actions Methods
-extension RiderSettingsViewController {
     private func selectDefaultBikeYear() {
         var rowToSelect = 0
         var bikeYear = availableYears.first
@@ -196,6 +173,19 @@ extension RiderSettingsViewController {
     private func closeRiderSettings() {
         //self.dismiss(animated: true, completion: nil)
         self.navigationController?.popViewController(animated: true)
+    }
+
+    // MARK: - IBAction Methods
+    @IBAction func saveClick(_ sender: Any) {
+        saveRiderSettings()
+    }
+
+    @IBAction func doneClick(_ sender: Any) {
+        if hasUnsavedChanges {
+            unSavedChangesAlert()
+        } else {
+            closeRiderSettings()
+        }
     }
 }
 

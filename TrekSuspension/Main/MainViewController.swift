@@ -52,10 +52,8 @@ class MainViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-}
 
-extension MainViewController {
-    // MARK: - Settings Methods
+    // MARK: - Private Methods
     private func showRiderSettings() {
         if isProcessing { return }
 
@@ -65,7 +63,6 @@ extension MainViewController {
         isProcessing = false
     }
 
-    // MARK: - Data Methods
     private func fetchSavedSettings() {
         mainViewModel.fetchRidersBikeConfiguration { [weak self] result in
             guard let `self` = self else { return }
