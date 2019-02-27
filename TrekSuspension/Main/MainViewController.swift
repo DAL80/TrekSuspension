@@ -81,7 +81,12 @@ extension MainViewController {
             return
         }
 
-        bikeModelName.text = currentBikeConfig.getModelName()
+        var tmpBikeYear = ""
+        if let year = Defaults[.bikeModelYear] {
+            tmpBikeYear = String(year)
+        }
+
+        bikeModelName.text = String("\(tmpBikeYear) \(currentBikeConfig.getModelName())")
         var suspensionName = ""
         var suspensionSettings = [SuspensionItemModel]()
         switch suspensionType.selectedSegmentIndex {
